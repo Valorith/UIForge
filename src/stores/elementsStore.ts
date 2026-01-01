@@ -18,6 +18,28 @@ export const useElementsStore = defineStore('elements', () => {
     return [...elements.value.values()].filter((el) => !el.parentId)
   })
 
+  // Filtered roots for main view (hides templates/referenced items)
+  const mainRoots = computed(() => {
+    const roots = rootElements.value
+    // If we only have one root, show it regardless of type
+    if (roots.length === 1) return roots
+
+    return roots.filter(el => {
+      // Hide referenced elements (they appear inside their parents)
+      if (el.isReferenced) return false
+
+      // Only show container types at root level
+      // detailed filter to avoid clutter
+      return (
+        el.type === 'Screen' ||
+        el.type === 'Page' ||
+        el.type === 'Window' ||
+        el.type === 'ManageWnd' // specialized window
+        // potentially others like 'ColorSelector' if they are roots
+      )
+    })
+  })
+
   const elementCount = computed(() => elements.value.size)
 
   const elementList = computed(() => [...elements.value.values()])
@@ -167,6 +189,7 @@ export const useElementsStore = defineStore('elements', () => {
 
     // Getters
     rootElements,
+    mainRoots,
     elementCount,
     elementList,
 

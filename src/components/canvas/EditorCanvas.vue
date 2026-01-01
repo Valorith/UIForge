@@ -215,26 +215,6 @@ function handleDragStart(element: ScreenPiece, event: any) {
 }
 
 // Handle drag end
-function handleDragEnd(element: ScreenPiece, event: any) {
-  if (!isDragging.value) return
-
-  const newX = Math.round(event.target.x())
-  const newY = Math.round(event.target.y())
-
-  const oldLocation = { ...dragStartElementPos.value }
-  const newLocation = { x: newX, y: newY }
-
-  elementsStore.updateElement(element.id, { location: newLocation })
-
-  historyStore.push({
-    description: `Move ${element.screenId}`,
-    undo: () => elementsStore.updateElement(element.id, { location: oldLocation }),
-    redo: () => elementsStore.updateElement(element.id, { location: newLocation }),
-  })
-
-  isDragging.value = false
-}
-
 // Resize handle positions
 type HandlePosition = 'nw' | 'n' | 'ne' | 'e' | 'se' | 's' | 'sw' | 'w'
 
@@ -418,7 +398,65 @@ function getAllElements(elements: ScreenPiece[]): ScreenPiece[] {
   return result
 }
 
-const flatElements = computed(() => getAllElements(rootElements.value))
+// Flatten function recursively gets all descendants
+// We start traversal from the FILTERED roots (mainRoots)
+// This ensures that flatElements (used for rendering) matches the elements we calculate positions for.
+const flatElements = computed(() => {
+  return getAllElements(elementsStore.mainRoots)
+})
+
+// Calculate absolute positions for all elements, handling layout logic
+const elementPositions = computed(() => {
+  const map = new Map<string, { x: number; y: number }>()
+
+  const processNode = (element: ScreenPiece, absX: number, absY: number) => {
+    map.set(element.id, { x: absX, y: absY })
+
+    if (element.type === 'TileLayoutBox' || element.type === 'LayoutBox' || element.type === 'VerticalLayoutBox' || element.type === 'HorizontalLayoutBox') {
+      // Layout logic
+      let cursorX = 0
+      let cursorY = 0
+      const spacing = element.spacing || 0
+      // Default strictly to true only if vertical property isn't implied? 
+      // TileLayoutBox usually defaults to HorizontalFirst=true unless specified.
+      // VerticalLayoutBox obviously defaults to false.
+      
+      let horizontal = element.horizontalFirst !== false
+      if (element.type === 'VerticalLayoutBox') horizontal = false
+      if (element.type === 'HorizontalLayoutBox') horizontal = true
+
+      for (const child of element.children) {
+        // Child position relative to parent layout
+        // Note: LayoutBoxes typically IGNORE child.location properties and enforce flow.
+        const childAbsX = absX + cursorX
+        const childAbsY = absY + cursorY
+        
+        processNode(child, childAbsX, childAbsY)
+
+        if (horizontal) {
+          cursorX += child.size.cx + spacing
+        } else {
+          cursorY += child.size.cy + spacing
+        }
+      }
+    } else {
+      // Standard Container (Screen, etc.) - respect child's relative location
+      for (const child of element.children) {
+        processNode(child, absX + child.location.x, absY + child.location.y)
+      }
+    }
+  }
+
+  // Use the store's filtered roots
+  const roots = elementsStore.mainRoots
+
+  for (const root of roots) {
+    // Root elements are positioned relative to 0,0 (or their own location)
+    processNode(root, root.location.x, root.location.y)
+  }
+
+  return map
+})
 
 // Calculate bounding box of all elements for centering
 const contentBounds = computed(() => {
@@ -432,8 +470,11 @@ const contentBounds = computed(() => {
   let maxY = -Infinity
 
   for (const el of flatElements.value) {
-    const x = el.location.x
-    const y = el.location.y
+    const pos = elementPositions.value.get(el.id)
+    if (!pos) continue
+
+    const x = pos.x
+    const y = pos.y
     const right = x + el.size.cx
     const bottom = y + el.size.cy
 
@@ -470,13 +511,73 @@ const canvasOffset = computed(() => {
   return { x: offsetX, y: offsetY }
 })
 
-// Get element position with centering offset applied
+// Get element position with centering offset
 function getElementX(element: ScreenPiece): number {
-  return element.location.x + canvasOffset.value.x
+  const pos = elementPositions.value.get(element.id)
+  return (pos?.x || 0) + canvasOffset.value.x
 }
 
 function getElementY(element: ScreenPiece): number {
-  return element.location.y + canvasOffset.value.y
+  const pos = elementPositions.value.get(element.id)
+  return (pos?.y || 0) + canvasOffset.value.y
+}
+
+// Handle drag end - convert absolute position back to relative
+function handleDragEnd(element: ScreenPiece, event: any) {
+  if (!isDragging.value) return
+
+  const stageX = Math.round(event.target.x())
+  const stageY = Math.round(event.target.y())
+
+  // We need to calculate what the NEW relative location should be.
+  // Relative Location = New Absolute - Parent Absolute
+  
+  let parentAbsX = 0
+  let parentAbsY = 0
+  
+  if (element.parentId) {
+    const parentPos = elementPositions.value.get(element.parentId)
+    if (parentPos) {
+      parentAbsX = parentPos.x
+      parentAbsY = parentPos.y
+    }
+  }
+
+  // Convert stage coordinate (Absolute + CanvasOffset) to Absolute
+  const absX = stageX - canvasOffset.value.x
+  const absY = stageY - canvasOffset.value.y
+  
+  // Calculate new relative position
+  const newRelX = absX - parentAbsX
+  const newRelY = absY - parentAbsY
+
+  const oldLocation = { ...dragStartElementPos.value }
+  const newLocation = { x: newRelX, y: newRelY }
+
+  elementsStore.updateElement(element.id, { location: newLocation })
+
+  historyStore.push({
+    description: `Move ${element.screenId}`,
+    undo: () => elementsStore.updateElement(element.id, { location: oldLocation }),
+    redo: () => elementsStore.updateElement(element.id, { location: newLocation }),
+  })
+
+  isDragging.value = false
+}
+
+// Helper to get header text for listbox
+function getListboxHeaderText(element: ScreenPiece): string {
+  // If no columns defined or width is very small, use simple text
+  if (element.size.cx < 80) return 'List'
+  
+  const cols = element.columns
+  if (cols && cols.length > 0) {
+    // Generate header based on column widths roughly
+    return cols.map((w, i) => `Col ${i+1}`).join('      ')
+  }
+  
+  // Default fallback
+  return 'Column 1          Column 2'
 }
 </script>
 
@@ -813,7 +914,7 @@ function getElementY(element: ScreenPiece): number {
               :config="{
                 x: 4,
                 y: 4,
-                text: 'Column 1          Column 2',
+                text: getListboxHeaderText(element),
                 fontSize: 11,
                 fill: '#a0a0b0',
                 fontStyle: 'bold',

@@ -17,7 +17,7 @@ import type {
   GaugeDrawTemplate,
   WindowDrawTemplate,
 } from '@/models/elements/Templates'
-import { generateId } from '@/models/elements/ScreenPiece'
+import { generateId, cloneScreenPiece } from '@/models/elements/ScreenPiece'
 import { createTemplateLibrary, type TemplateLibrary } from '@/models/elements/Templates'
 
 /** Result of parsing an EQUI file */
@@ -262,7 +262,7 @@ function parseTopLevelElement(node: Element, result: ParsedEquiFile): void {
  * Parse a Screen element
  */
 function parseScreen(node: Element, result: ParsedEquiFile): Screen | null {
-  const screenId = getChildText(node, 'ScreenID')
+  const screenId = getChildText(node, 'ScreenID') || node.getAttribute('item')
   if (!screenId) return null
 
   const screen: Screen = {
@@ -297,16 +297,26 @@ function parseScreen(node: Element, result: ParsedEquiFile): Screen | null {
     result.itemRegistry.set(screen.item, screen)
   }
 
-  // Collect Pieces references (to be resolved later across all files)
-  const piecesRefs: string[] = []
-  for (const piecesNode of node.querySelectorAll(':scope > Pieces')) {
-    const refName = piecesNode.textContent?.trim()
-    if (refName) {
-      piecesRefs.push(refName)
+  // Collect Pieces and Pages references
+  const childRefs: string[] = []
+
+  // Helper to collect refs from a selector
+  const collect = (selector: string) => {
+    for (const refNode of node.querySelectorAll(`:scope > ${selector}`)) {
+      const refName = refNode.textContent?.trim()
+      if (refName) {
+        // Strip type prefix if present (e.g. "Screen:Name" -> "Name")
+        const cleanName = refName.includes(':') ? refName.split(':')[1] : refName
+        childRefs.push(cleanName)
+      }
     }
   }
-  if (piecesRefs.length > 0) {
-    result.unresolvedPieces.set(screen.id, piecesRefs)
+
+  collect('Pieces')
+  collect('Pages')
+
+  if (childRefs.length > 0) {
+    result.unresolvedPieces.set(screen.id, childRefs)
   }
 
   // Parse nested child elements (direct children that are ScreenPieces)
@@ -343,7 +353,7 @@ function parseScreenPiece(node: Element, result: ParsedEquiFile): ScreenPiece | 
     'Spacing', 'SecondarySpacing', 'HorizontalFirst', 'AnchorToTop', 'AnchorToLeft',
     'FirstPieceTemplate', 'SnapToChildren', 'AutoStretchHorizontal', 'AutoStretchVertical',
     // Control properties
-    'Animation', 'InvSlot', 'BagSlot', 'SpellSlot', 'ButtonIndex', 'TabText',
+    'Animation', 'BagSlot', 'SpellSlot', 'ButtonIndex', 'TabText',
     'MaxChars', 'Password', 'Multiline', 'AutoVScroll', 'NoWrap', 'AlignCenter', 'AlignRight',
     // Grid properties
     'Rows', 'Cols', 'CellWidth', 'CellHeight',
@@ -367,6 +377,11 @@ function parseScreenPiece(node: Element, result: ParsedEquiFile): ScreenPiece | 
   ])
 
   if (knownNonPieces.has(tagName)) {
+    return null
+  }
+
+  // Special handling for InvSlot which can be both a generic property and a specific ScreenPiece
+  if (tagName === 'InvSlot' && !node.getAttribute('item') && !getChildText(node, 'ScreenID')) {
     return null
   }
 
@@ -405,25 +420,34 @@ function parseScreenPiece(node: Element, result: ParsedEquiFile): ScreenPiece | 
   // Parse control-specific properties
   parseControlSpecificProps(node, piece)
 
-  // Collect Pieces references (to be resolved later)
-  const piecesRefs: string[] = []
-  for (const piecesNode of node.querySelectorAll(':scope > Pieces')) {
-    const refName = piecesNode.textContent?.trim()
-    if (refName) {
-      piecesRefs.push(refName)
-    }
-  }
-  if (piecesRefs.length > 0) {
-    result.unresolvedPieces.set(piece.id, piecesRefs)
-  }
-
+  // Collect Pieces and Pages references
+  const childRefs: string[] = []
   // Parse nested children
+  // Parse nested children and collect references
   for (const child of node.children) {
+    const tagName = child.tagName
+
+    // 1. Check for references (Pieces/Pages)
+    if (tagName === 'Pieces' || tagName === 'Pages') {
+      const refName = child.textContent?.trim()
+      if (refName) {
+        // Strip type prefix if present (e.g. "Screen:Name" -> "Name")
+        const cleanName = refName.includes(':') ? refName.split(':')[1] : refName
+        childRefs.push(cleanName)
+      }
+      continue
+    }
+
+    // 2. Parse nested child components
     const childPiece = parseScreenPiece(child, result)
     if (childPiece) {
       childPiece.parentId = piece.id
       piece.children.push(childPiece)
     }
+  }
+
+  if (childRefs.length > 0) {
+    result.unresolvedPieces.set(piece.id, childRefs)
   }
 
   return piece
@@ -546,6 +570,16 @@ function parseControlSpecificProps(node: Element, piece: ScreenPiece): void {
       anyPiece.headerStyle = parseBoolean(node, 'HeaderStyle')
       anyPiece.sort = parseBoolean(node, 'Sort')
       anyPiece.highlightColor = parseRGB(node, 'HighlightColor')
+
+      const colContainer = node.querySelector(':scope > Columns')
+      if (colContainer) {
+        const columns: number[] = []
+        for (const widthNode of colContainer.querySelectorAll(':scope > Width')) {
+          const w = parseInt(widthNode.textContent || '0', 10)
+          if (!isNaN(w)) columns.push(w)
+        }
+        if (columns.length > 0) anyPiece.columns = columns
+      }
       break
 
     case 'TabBox':
@@ -801,46 +835,99 @@ export function resolvePiecesReferences(parsedFiles: ParsedEquiFile[]): void {
   // Build a global item registry from all files
   const globalRegistry = new Map<string, ScreenPiece>()
 
+  // Also consolidate all unresolved references: Map<PieceID, ChildNames[]>
+  // We need to look up unresolved references by ID.
+  const globalUnresolved = new Map<string, string[]>()
+
+  // Map ID to Piece for iteration
+  const allPiecesById = new Map<string, ScreenPiece>()
+
   for (const file of parsedFiles) {
     for (const [itemName, piece] of file.itemRegistry) {
       globalRegistry.set(itemName, piece)
     }
-  }
-
-  // Build a map of all pieces by ID
-  const allPiecesById = new Map<string, ScreenPiece>()
-
-  function collectPieces(screens: ScreenPiece[]) {
-    for (const screen of screens) {
-      allPiecesById.set(screen.id, screen)
-      if (screen.children.length > 0) {
-        collectPieces(screen.children)
-      }
+    for (const [id, refs] of file.unresolvedPieces) {
+      globalUnresolved.set(id, refs)
     }
-  }
 
-  for (const file of parsedFiles) {
-    collectPieces(file.screens)
-  }
-
-  // Resolve unresolved Pieces references
-  for (const file of parsedFiles) {
-    for (const [parentId, pieceNames] of file.unresolvedPieces) {
-      const parent = allPiecesById.get(parentId)
-      if (!parent) continue
-
-      for (const pieceName of pieceNames) {
-        const child = globalRegistry.get(pieceName)
-        if (child) {
-          // Clone the child so we don't share references
-          const childCopy = JSON.parse(JSON.stringify(child))
-          childCopy.parentId = parent.id
-          // Generate a new ID to avoid conflicts
-          childCopy.id = generateId()
-          parent.children.push(childCopy)
+    // Helper to traverse and map IDs
+    const traverse = (pieces: ScreenPiece[]) => {
+      for (const p of pieces) {
+        allPiecesById.set(p.id, p)
+        if (p.children.length > 0) {
+          traverse(p.children)
         }
       }
     }
+    traverse(file.screens)
+  }
+
+  // Set of IDs processing to detect cycles
+  const processing = new Set<string>()
+  // Set of IDs finished
+  const resolved = new Set<string>()
+
+  // Recursive resolver
+  function resolve(piece: ScreenPiece) {
+    if (resolved.has(piece.id)) return
+    if (processing.has(piece.id)) {
+      // Circular reference detected
+      return
+    }
+    processing.add(piece.id)
+
+    // 1. Resolve pending references for THIS piece (add them as children)
+    const childNames = globalUnresolved.get(piece.id)
+    if (childNames) {
+      if (piece.item === 'ACTW_ActionsSubwindows') {
+        console.log('Resolving parent:', piece.item, 'with children:', childNames)
+      }
+      for (const name of childNames) {
+        const childDef = globalRegistry.get(name)
+        if (childDef) {
+          if (name === 'ActionsAbilitiesPage') {
+            console.log('Found child definition for:', name, 'isReferenced BEFORE:', childDef.isReferenced)
+          }
+
+          // RECURSE: Ensure the child definition is fully resolved first
+          // This ensures that if childDef has its own children (refs), they are added BEFORE we clone it.
+          resolve(childDef)
+
+          // Clone the fully resolved child
+          // cloneScreenPiece handles deep cloning and ID regeneration
+          const childCopy = cloneScreenPiece(childDef)
+          childCopy.parentId = piece.id
+
+          piece.children.push(childCopy)
+
+          // Mark original as referenced (hidden from root)
+          childDef.isReferenced = true
+          if (name === 'ActionsAbilitiesPage') {
+            console.log('Marked child referenced:', name, 'isReferenced AFTER:', childDef.isReferenced)
+          }
+        } else {
+          console.warn('Could not find child definition for:', name, 'required by:', piece.item)
+        }
+      }
+    }
+
+    // 2. Recurse into existing children (if any were static or just added)
+    // Note: We iterate a copy of the array because we pushed to it above? 
+    // No, pushing appends, so iterating normally will hit new items.
+    // However, the new items (childCopy) are fully resolved because we called resolve(childDef).
+    // So we effectively only need to call resolve() on static children that might have THEIR OWN unresolved refs.
+    // But calling it on everything is safe and ensures completeness.
+    for (const child of piece.children) {
+      resolve(child)
+    }
+
+    processing.delete(piece.id)
+    resolved.add(piece.id)
+  }
+
+  // Iterate all pieces to ensure everything is resolved
+  for (const piece of allPiecesById.values()) {
+    resolve(piece)
   }
 }
 

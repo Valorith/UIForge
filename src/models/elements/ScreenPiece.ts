@@ -57,6 +57,17 @@ export interface ScreenPiece {
   // Style flags
   style: StyleFlags
 
+  // Layout Properties (TileLayoutBox, etc.)
+  spacing?: number
+  secondarySpacing?: number
+  horizontalFirst?: boolean
+  anchorToTop?: boolean
+  anchorToLeft?: boolean
+  firstPieceTemplate?: boolean
+  snapToChildren?: boolean
+  isReferenced?: boolean // True if this piece is used as a child of another piece
+  columns?: number[]
+
   // Template references
   drawTemplate?: string
 

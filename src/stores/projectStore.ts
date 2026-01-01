@@ -72,6 +72,9 @@ export const useProjectStore = defineStore('project', () => {
         console.warn('Parse warnings:', parsed.errors)
       }
 
+      // Resolve internal references for this file
+      resolvePiecesReferences([parsed])
+
       // Create UIFile
       const uiFile: UIFile = {
         filename: file.name,

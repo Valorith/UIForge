@@ -12,7 +12,7 @@ const projectStore = useProjectStore()
 // Track expanded nodes
 const expandedNodes = ref<Set<string>>(new Set())
 
-const rootElements = computed(() => elementsStore.rootElements)
+const rootElements = computed(() => elementsStore.mainRoots)
 const hasElements = computed(() => elementsStore.elementCount > 0)
 
 // Get icon for element type
