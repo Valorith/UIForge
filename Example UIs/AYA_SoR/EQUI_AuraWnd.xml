@@ -1,0 +1,57 @@
+<?xml version = "1.0"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+	<Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes"/>
+	<Listbox item="AW_AuraList">
+		<ScreenID>AuraList</ScreenID>
+		<DrawTemplate>WDT_Inner</DrawTemplate>
+		<AutoStretch>true</AutoStretch>
+		<TopAnchorToTop>true</TopAnchorToTop>
+		<BottomAnchorToTop>false</BottomAnchorToTop>
+		<LeftAnchorToLeft>true</LeftAnchorToLeft>
+		<RightAnchorToLeft>false</RightAnchorToLeft>
+		<TopAnchorOffset>1</TopAnchorOffset>
+		<LeftAnchorOffset>0</LeftAnchorOffset>
+		<RightAnchorOffset>1</RightAnchorOffset>
+		<BottomAnchorOffset>1</BottomAnchorOffset>
+		<Columns>
+			<Width>15</Width>
+		</Columns>
+		<Columns>
+			<Width>152</Width>
+		</Columns>
+		<Columns>
+			<Width>15</Width>
+		</Columns>
+		<Style_Border>false</Style_Border>
+		<Style_VScroll>false</Style_VScroll>
+	</Listbox>
+	<Screen item="AuraWindow">
+		<!--<ScreenID/>-->
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>196</X>
+			<Y>50</Y>
+		</Location>
+		<Size>
+			<CX>184</CX>
+			<CY>46</CY>
+		</Size>
+		<MinHSize>100</MinHSize>
+		<MinVSize>16</MinVSize>
+		<MaxHSize>148</MaxHSize>
+		<MaxVSize>38</MaxVSize>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+		<Text/>
+		<DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>true</Style_Sizable>
+		<Style_ClientMovable>true</Style_ClientMovable>
+		<Pieces>AW_AuraList</Pieces>
+	</Screen>
+</XML>

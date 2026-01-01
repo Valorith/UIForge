@@ -1,0 +1,21 @@
+{
+    # Disable admin API - not needed in Railway
+    admin off
+    # Disable auto HTTPS - Railway handles TLS termination
+    auto_https off
+}
+
+# Listen on PORT environment variable (Railway sets this)
+:{$PORT} {
+    # Serve from /srv directory
+    root * /srv
+
+    # Enable gzip compression
+    encode gzip
+
+    # SPA routing - serve index.html for missing files
+    try_files {path} /index.html
+
+    # Serve static files
+    file_server
+}

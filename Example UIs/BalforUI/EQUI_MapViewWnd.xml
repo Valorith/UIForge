@@ -1,0 +1,2568 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+  <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
+
+  <TextureInfo item="MVWSButtons.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="MVWSParchment.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="MVWSDark.tga">
+    <Size>
+      <CX>256</CX>
+      <CY>256</CY>
+    </Size>
+  </TextureInfo>
+  <TextureInfo item="map_icon.tga">
+    <Size>
+      <CX>32</CX>
+      <CY>32</CY>
+    </Size>
+  </TextureInfo>
+
+  
+
+  <FrameTemplate item="FT_MVWTabBorder">
+    <TopLeft>MVW_ClearPixel</TopLeft>
+    <Top>MVW_ClearPixel</Top>
+    <TopRight>MVW_ClearPixel</TopRight>
+    <RightTop>MVW_ClearPixel</RightTop>
+    <Right>MVW_ClearPixel</Right>
+    <RightBottom>MVW_ClearPixel</RightBottom>
+    <LeftTop>MVW_ClearPixel</LeftTop>
+    <Left>MVW_ClearPixel</Left>
+    <LeftBottom>MVW_ClearPixel</LeftBottom>
+    <OverlapLeft>0</OverlapLeft>
+    <OverlapTop>0</OverlapTop>
+    <OverlapRight>0</OverlapRight>
+    <OverlapBottom>0</OverlapBottom>
+  </FrameTemplate>
+
+  <FrameTemplate item="FT_MVWPageBorder">
+    <TopLeft>MVW_ClearPixel</TopLeft>
+    <Top>MVW_ClearPixel</Top>
+    <TopRight>MVW_ClearPixel</TopRight>
+    <RightTop>MVW_ClearPixel</RightTop>
+    <Right>MVW_ClearPixel</Right>
+    <RightBottom>MVW_ClearPixel</RightBottom>
+    <BottomRight>MVW_ClearPixel</BottomRight>
+    <Bottom>MVW_ClearPixel</Bottom>
+    <BottomLeft>MVW_ClearPixel</BottomLeft>
+    <LeftTop>MVW_ClearPixel</LeftTop>
+    <Left>MVW_ClearPixel</Left>
+    <LeftBottom>MVW_ClearPixel</LeftBottom>
+    <OverlapLeft>0</OverlapLeft>
+    <OverlapTop>0</OverlapTop>
+    <OverlapRight>0</OverlapRight>
+    <OverlapBottom>0</OverlapBottom>
+  </FrameTemplate>
+
+  <Ui2DAnimation item="A_MapPiece01">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSParchment.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>256</CX>
+        <CY>256</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_MapPiece02">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSDark.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>256</CX>
+        <CY>204</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_ClearPixel">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>window_pieces05.tga</Texture>
+      <Location>
+        <X>22</X>
+        <Y>192</Y>
+      </Location>
+      <Size>
+        <CX>1</CX>
+        <CY>1</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_ClearQuad">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>window_pieces05.tga</Texture>
+      <Location>
+        <X>22</X>
+        <Y>192</Y>
+      </Location>
+      <Size>
+        <CX>4</CX>
+        <CY>4</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_GuideButtonNormal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>166</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_GuideButtonFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>188</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_GuideButtonPressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>210</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_GuideButtonPressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchButtonNormal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>200</X>
+        <Y>166</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchButtonFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>200</X>
+        <Y>188</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchButtonPressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>200</X>
+        <Y>210</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchButtonPressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchClearButtonNormal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>134</X>
+        <Y>166</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchClearButtonFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>134</X>
+        <Y>188</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchClearButtonPressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>134</X>
+        <Y>210</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_SearchClearButtonPressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_A_LoadCurrentButtonNormal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>156</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_A_LoadCurrentButtonFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>178</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_A_LoadCurrentButtonPressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>200</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_A_LoadCurrentButtonPressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>222</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_ToolbarButtonNormal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_ToolbarButtonFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>22</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_ToolbarButtonPressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>44</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="A_ToolbarButtonPressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>66</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer1_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer1_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer1_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer1_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer2_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer2_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer2_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer2_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer3_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer3_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer3_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Layer3_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Base_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>166</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Base_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>188</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Base_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>210</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Base_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>232</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Label_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>78</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Label_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Label_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>122</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Label_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>144</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Filter_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>156</X>
+        <Y>166</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Filter_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>156</X>
+        <Y>188</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Filter_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>156</X>
+        <Y>210</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Filter_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>156</X>
+        <Y>232</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Center_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Center_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>22</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Center_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>44</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Center_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>66</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer1_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer1_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer1_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer1_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>56</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer2_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer2_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer2_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer2_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>34</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer3_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>132</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer3_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>154</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer3_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>88</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Active_Layer3_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>110</X>
+        <Y>12</Y>
+      </Location>
+      <Size>
+        <CX>22</CX>
+        <CY>22</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Group_Normal">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>176</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>40</CX>
+        <CY>16</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Group_Flyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>176</X>
+        <Y>18</Y>
+      </Location>
+      <Size>
+        <CX>40</CX>
+        <CY>16</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Group_Pressed">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>216</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>40</CX>
+        <CY>16</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Ui2DAnimation item="MVW_B_Group_PressedFlyby">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>MVWSButtons.tga</Texture>
+      <Location>
+        <X>216</X>
+        <Y>18</Y>
+      </Location>
+      <Size>
+        <CX>40</CX>
+        <CY>16</CY>
+      </Size>
+    </Frames>
+  </Ui2DAnimation>
+
+  <Button item="MVW_Layer0Button">
+    <ScreenID>MVW_Layer0Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>230</X>
+      <Y>121</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_Base_Normal</Normal>
+      <Disabled>MVW_B_Base_Normal</Disabled>
+      <Flyby>MVW_B_Base_Flyby</Flyby>
+      <Pressed>MVW_B_Base_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Base_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>2</Font>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <BottomAnchorOffset>70</BottomAnchorOffset>
+    <TopAnchorOffset>92</TopAnchorOffset>
+  </Button>
+
+  <Button item="MVW_LabelsToggleButton">
+    <ScreenID>MVW_LabelsToggleButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>114</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <!--<TooltipReference>Toggle displaying of labels on and off.</TooltipReference>-->
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Label_Normal</Disabled>
+      <Normal>MVW_B_Label_Normal</Normal>
+      <Flyby>MVW_B_Label_Flyby</Flyby>
+      <Pressed>MVW_B_Label_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Label_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>2</Font>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorOffset>101</RightAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <LeftAnchorOffset>123</LeftAnchorOffset>
+  </Button>
+
+  <Button item="MVW_PanResetButton">
+    <ScreenID>MVW_PanResetButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <TopAnchorOffset>141</TopAnchorOffset>
+    <BottomAnchorOffset>119</BottomAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Center_Normal</Disabled>
+      <Flyby>MVW_B_Center_Flyby</Flyby>
+      <Normal>MVW_B_Center_Normal</Normal>
+      <Pressed>MVW_B_Center_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Center_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>1</Font>
+    <Style_Border>false</Style_Border>
+    <LeftAnchorOffset>25</LeftAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorOffset>119</BottomAnchorOffset>
+    <TopAnchorOffset>141</TopAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+  </Button>
+
+  <Button item="MVW_ShowGroupButton">
+    <ScreenID>MVW_ShowGroupButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Template>BDT_Normal</Template>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>240</R>
+      <G>130</G>
+      <B>0</B>
+    </TextColor>
+    <Text>Group</Text>
+    <Font>3</Font>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorOffset>47</BottomAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <LeftAnchorOffset>51</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <TopAnchorOffset>24</TopAnchorOffset>
+  </Button>
+   <Button item="MVW_ShowNamesButton">
+   <ScreenID>MVW_ShowNamesButton</ScreenID>
+   <RelativePosition>true</RelativePosition>
+    <Template>BDT_Normal</Template>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>240</R>
+      <G>130</G>
+      <B>0</B>
+    </TextColor>
+    <Text>Names</Text>
+    <Font>3</Font>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorOffset>70</BottomAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <LeftAnchorOffset>51</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <TopAnchorOffset>47</TopAnchorOffset>
+     <TooltipReference>Toggle display of group members' names in the current zone.</TooltipReference>
+     </Button>
+
+  <Button item="MVW_ZFilterButton">
+    <ScreenID>MVW_ZFilterButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>10</X>
+      <Y>192</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Filter_Normal</Disabled>
+      <Flyby>MVW_B_Filter_Flyby</Flyby>
+      <Normal>MVW_B_Filter_Normal</Normal>
+      <Pressed>MVW_B_Filter_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Filter_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <!--<TooltipReference>Toggle filtering map lines based on your position and the high and low values.</TooltipReference>-->
+    <Font>2</Font>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <LeftAnchorOffset>149</LeftAnchorOffset>
+    <RightAnchorOffset>127</RightAnchorOffset>
+  </Button>
+
+  <Button item="MVW_Layer3ActiveButton">
+    <ScreenID>MVW_Layer3ActiveButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>189</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Active_Layer3_Normal</Disabled>
+      <Flyby>MVW_B_Active_Layer3_Flyby</Flyby>
+      <Normal>MVW_B_Active_Layer3_Normal</Normal>
+      <Pressed>MVW_B_Active_Layer3_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Active_Layer3_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <RadioGroup>MVW_ActiveLayer</RadioGroup>
+    <Font>2</Font>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <RightAnchorOffset>28</RightAnchorOffset>
+    <LeftAnchorOffset>50</LeftAnchorOffset>
+  </Button>
+
+  <Button item="MVW_Layer2ActiveButton">
+    <ScreenID>MVW_Layer2ActiveButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>166</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Active_Layer2_Normal</Disabled>
+      <Flyby>MVW_B_Active_Layer2_Flyby</Flyby>
+      <Normal>MVW_B_Active_Layer2_Normal</Normal>
+      <Pressed>MVW_B_Active_Layer2_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Active_Layer2_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <RadioGroup>MVW_ActiveLayer</RadioGroup>
+    <Font>2</Font>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorOffset>51</RightAnchorOffset>
+    <LeftAnchorOffset>73</LeftAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+  </Button>
+
+  <Button item="MVW_Layer1ActiveButton">
+    <ScreenID>MVW_Layer1ActiveButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>143</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Active_Layer1_Normal</Disabled>
+      <Flyby>MVW_B_Active_Layer1_Flyby</Flyby>
+      <Normal>MVW_B_Active_Layer1_Normal</Normal>
+      <Pressed>MVW_B_Active_Layer1_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Active_Layer1_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <RadioGroup>MVW_ActiveLayer</RadioGroup>
+    <Font>2</Font>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorOffset>74</RightAnchorOffset>
+    <LeftAnchorOffset>96</LeftAnchorOffset>
+  </Button>
+
+  <Label item="MVW_LayerActiveLabel">
+    <ScreenID>MVW_LayerActiveLabel</ScreenID>
+    <Font>2</Font>
+    <Text>.</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+      <Alpha>0</Alpha>
+    </TextColor>
+    <Size>
+      <CX>1</CX>
+      <CY>1</CY>
+    </Size>
+    <AlignCenter>true</AlignCenter>
+    <Location>
+      <X>0</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+
+  <Label item="MVW_LayerVisibleLabel">
+    <ScreenID>MVW_LayerVisibleLabel</ScreenID>
+    <Font>3</Font>
+    <Text>.</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>1</CX>
+      <CY>1</CY>
+    </Size>
+    <AlignCenter>true</AlignCenter>
+    <Location>
+      <X>0</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+
+  <Button item="MVW_Layer3Button">
+    <ScreenID>MVW_Layer3Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>230</X>
+      <Y>190</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Layer3_Normal</Disabled>
+      <Flyby>MVW_B_Layer3_Flyby</Flyby>
+      <Normal>MVW_B_Layer3_Normal</Normal>
+      <Pressed>MVW_B_Layer3_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Layer3_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>2</Font>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>1</RightAnchorOffset>
+  </Button>
+
+  <Button item="MVW_Layer2Button">
+    <ScreenID>MVW_Layer2Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>230</X>
+      <Y>167</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Disabled>MVW_B_Layer2_Normal</Disabled>
+      <Flyby>MVW_B_Layer2_Flyby</Flyby>
+      <Normal>MVW_B_Layer2_Normal</Normal>
+      <Pressed>MVW_B_Layer2_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Layer2_PressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>2</Font>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <TopAnchorOffset>46</TopAnchorOffset>
+    <BottomAnchorOffset>24</BottomAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+  </Button>
+
+  <Button item="MVW_Layer1Button">
+    <ScreenID>MVW_Layer1Button</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>230</X>
+      <Y>144</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>181</R>
+      <G>123</G>
+      <B>47</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_Layer1_Normal</Normal>
+      <Pressed>MVW_B_Layer1_Pressed</Pressed>
+      <PressedFlyby>MVW_B_Layer1_PressedFlyby</PressedFlyby>
+      <Flyby>MVW_B_Layer1_Flyby</Flyby>
+      <Disabled>MVW_B_Layer1_Normal</Disabled>
+    </ButtonDrawTemplate>
+    <Font>2</Font>
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <BottomAnchorOffset>47</BottomAnchorOffset>
+    <TopAnchorOffset>69</TopAnchorOffset>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <AutoStretch>true</AutoStretch>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+  </Button>
+
+  <Label item="MVW_LayersLabel">
+    <ScreenID>MVW_LayersLabel</ScreenID>
+    <Font>3</Font>
+    <Text>.</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <Size>
+      <CX>1</CX>
+      <CY>1</CY>
+    </Size>
+    <AlignCenter>true</AlignCenter>
+    <Location>
+      <X>0</X>
+      <Y>0</Y>
+    </Location>
+  </Label>
+
+  <Ui2DAnimation item="A_MapIcon">
+    <Cycle>true</Cycle>
+    <Frames>
+      <Texture>map_icon.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>32</CX>
+        <CY>32</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+      <Duration>1000</Duration>
+    </Frames>
+  </Ui2DAnimation>
+
+  <ButtonDrawTemplate item="BDT_MapIcon">
+    <Normal>A_MapIcon</Normal>
+  </ButtonDrawTemplate>
+
+  <Button item="MVW_MapZoneGuide">
+    <ScreenID>MVW_MapZoneGuide</ScreenID>
+    <AutoStretch>true</AutoStretch>
+    <RelativePosition>true</RelativePosition>
+    <LeftAnchorOffset>97</LeftAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <RightAnchorOffset>75</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Toggle the visibility of the Zone Guide.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_GuideButtonNormal</Normal>
+      <Pressed>MVW_GuideButtonPressed</Pressed>
+      <Flyby>MVW_GuideButtonFlyby</Flyby>
+      <Disabled>MVW_GuideButtonNormal</Disabled>
+      <PressedFlyby>MVW_GuideButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+
+  <Button item="MVW_MapIconButton">
+    <ScreenID>MVW_MapIconButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <LeftAnchorOffset>4</LeftAnchorOffset>
+    <TopAnchorOffset>36</TopAnchorOffset>
+    <RightAnchorOffset>36</RightAnchorOffset>
+    <BottomAnchorOffset>4</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <Size>
+      <CX>32</CX>
+      <CY>32</CY>
+    </Size>
+    <Template>BDT_MapIcon</Template>
+  </Button>
+
+  <Combobox item="MVW_MapsDirCombobox">
+    <ScreenID>MVW_MapsDirCombobox</ScreenID>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <AutoStretchList>true</AutoStretchList>
+    <Location>
+      <X>70</X>
+      <Y>50</Y>
+    </Location>
+    <Size>
+      <CX>120</CX>
+      <CY>24</CY>
+    </Size>
+    <ListHeight>200</ListHeight>
+    <Button>BDT_Combo</Button>
+    <Style_Border>true</Style_Border>
+  </Combobox>
+
+  <Label item="MVW_SearchLabel">
+    <ScreenID>MVW_SearchLabel</ScreenID>
+    <Location>
+      <X>0</X>
+      <Y>4</Y>
+    </Location>
+    <Size>
+      <CX>50</CX>
+      <CY>15</CY>
+    </Size>
+    <Text>Search:</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+  </Label>
+
+  <Editbox item="MVW_SearchBox">
+    <ScreenID>MVW_SearchBox</ScreenID>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <RelativePosition>true</RelativePosition>
+    <LeftAnchorOffset>1</LeftAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <RightAnchorOffset>116</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <Style_Border>true</Style_Border>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+  </Editbox>
+
+  <Button item="MVW_SearchButton">
+    <ScreenID>MVW_SearchButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <LeftAnchorOffset>117</LeftAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <RightAnchorOffset>139</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Normal>MVW_SearchButtonNormal</Normal>
+      <Pressed>MVW_SearchButtonPressed</Pressed>
+      <Flyby>MVW_SearchButtonFlyby</Flyby>
+      <Disabled>MVW_SearchButtonNormal</Disabled>
+      <PressedFlyby>MVW_SearchButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+
+  <Button item="MVW_SearchClearButton">
+    <ScreenID>MVW_SearchClearButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <LeftAnchorOffset>140</LeftAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <RightAnchorOffset>162</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Resets the search.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_SearchClearButtonNormal</Normal>
+      <Pressed>MVW_SearchClearButtonPressed</Pressed>
+      <Flyby>MVW_SearchClearButtonFlyby</Flyby>
+      <Disabled>MVW_SearchClearButtonNormal</Disabled>
+      <PressedFlyby>MVW_SearchClearButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+
+  <Screen item="MVW_MapSearchScreen">
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <TopAnchorOffset>4</TopAnchorOffset>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <BottomAnchorOffset>32</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <LeftAnchorOffset>165</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>100</RightAnchorOffset>
+    <Style_Transparent>true</Style_Transparent>
+    <Size>
+      <CX>1</CX>
+    </Size>
+  </Screen>
+
+  <Button item="MVW_LoadCurrent">
+    <ScreenID>MVW_LoadCurrent</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TooltipReference>Reset map to current zone.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_A_LoadCurrentButtonNormal</Normal>
+      <Pressed>MVW_B_A_LoadCurrentButtonPressed</Pressed>
+      <Flyby>MVW_B_A_LoadCurrentButtonFlyby</Flyby>
+      <Disabled>MVW_B_A_LoadCurrentButtonNormal</Disabled>
+      <PressedFlyby>MVW_B_A_LoadCurrentButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>52</RightAnchorOffset>
+    <LeftAnchorOffset>74</LeftAnchorOffset>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+  </Button>
+
+  <Button item="MVW_ToolbarButton">
+    <ScreenID>MVW_ToolbarButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <ButtonDrawTemplate>
+      <Normal>A_ToolbarButtonNormal</Normal>
+      <Pressed>A_ToolbarButtonPressed</Pressed>
+      <Flyby>A_ToolbarButtonFlyby</Flyby>
+      <Disabled>A_ToolbarButtonNormal</Disabled>
+      <PressedFlyby>A_ToolbarButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <TooltipReference>Pop up the Toolbar Window.</TooltipReference>-->
+    <LeftAnchorOffset>23</LeftAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <RightAnchorOffset>1</RightAnchorOffset>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <BottomAnchorOffset>96</BottomAnchorOffset>
+    <TopAnchorOffset>118</TopAnchorOffset>
+  </Button>
+
+  <Button item="MVW_Find">
+    <ScreenID>MVW_Find</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <TooltipReference>Find a destination in the current zone.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_A_LoadCurrentButtonNormal</Normal>
+      <Pressed>MVW_B_A_LoadCurrentButtonPressed</Pressed>
+      <Flyby>MVW_B_A_LoadCurrentButtonFlyby</Flyby>
+      <Disabled>MVW_B_A_LoadCurrentButtonNormal</Disabled>
+      <PressedFlyby>MVW_B_A_LoadCurrentButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <AutoStretch>true</AutoStretch>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <RightAnchorOffset>185</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <LeftAnchorOffset>163</LeftAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+  </Button>
+
+  <Editbox item="MVW_MinZEditBox">
+    <ScreenID>MVW_MinZEditBox</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>0</X>
+      <Y>317</Y>
+    </Location>
+    <Size>
+      <CX>63</CX>
+      <CY>20</CY>
+    </Size>
+    <Style_Border>true</Style_Border>
+    <TextColor>
+      <R>1</R>
+      <G>1</G>
+      <B>1</B>
+      <Alpha>255</Alpha>
+    </TextColor>
+    <!--<TooltipReference>How much below your current position to draw map lines.</TooltipReference>-->
+    <Style_Transparent>true</Style_Transparent>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <LeftAnchorOffset>214</LeftAnchorOffset>
+    <RightAnchorOffset>183</RightAnchorOffset>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+  </Editbox>
+
+  <Editbox item="MVW_MaxZEditBox">
+    <ScreenID>MVW_MaxZEditBox</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>0</X>
+      <Y>352</Y>
+    </Location>
+    <Size>
+      <CX>63</CX>
+      <CY>20</CY>
+    </Size>
+    <Style_Border>true</Style_Border>
+    <TextColor>
+      <R>1</R>
+      <G>1</G>
+      <B>1</B>
+    </TextColor>
+    <!--<TooltipReference>How much above your current position to draw map lines.</TooltipReference>-->
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <Style_Transparent>true</Style_Transparent>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <TopAnchorOffset>23</TopAnchorOffset>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <AutoStretch>true</AutoStretch>
+    <RightAnchorOffset>150</RightAnchorOffset>
+    <LeftAnchorOffset>181</LeftAnchorOffset>
+  </Editbox>
+
+  <Button item="MVW_EndFind">
+    <ScreenID>MVW_EndFind</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>224</X>
+      <Y>1</Y>
+    </Location>
+    <Size>
+      <CX>80</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Cancel the current find path.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_A_LoadCurrentButtonNormal</Normal>
+      <Pressed>MVW_B_A_LoadCurrentButtonPressed</Pressed>
+      <Flyby>MVW_B_A_LoadCurrentButtonFlyby</Flyby>
+      <Disabled>MVW_B_A_LoadCurrentButtonNormal</Disabled>
+      <PressedFlyby>MVW_B_A_LoadCurrentButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <AutoStretch>true</AutoStretch>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <RightAnchorOffset>185</RightAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <LeftAnchorOffset>163</LeftAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+  </Button>
+
+  <Button item="MVW_FindAutoZoom">
+    <ScreenID>MVW_FindAutoZoom</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>250</X>
+      <Y>0</Y>
+    </Location>
+    <Size>
+      <CX>80</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>true</Style_Checkbox>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Toggle the map auto-zooming on your find path.</TooltipReference>
+    <ButtonDrawTemplate>
+      <Normal>MVW_B_A_LoadCurrentButtonNormal</Normal>
+      <Pressed>MVW_B_A_LoadCurrentButtonPressed</Pressed>
+      <Flyby>MVW_B_A_LoadCurrentButtonFlyby</Flyby>
+      <Disabled>MVW_B_A_LoadCurrentButtonNormal</Disabled>
+      <PressedFlyby>MVW_B_A_LoadCurrentButtonPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>26</TopAnchorOffset>
+    <BottomAnchorOffset>48</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <LeftAnchorOffset>1</LeftAnchorOffset>
+    <RightAnchorToLeft>true</RightAnchorToLeft>
+    <RightAnchorOffset>23</RightAnchorOffset>
+  </Button>
+
+  <Screen item="MVW_MapCurrentZoneScreen">
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>false</AutoStretch>
+    <TopAnchorOffset>25</TopAnchorOffset>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <BottomAnchorOffset>5</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <LeftAnchorOffset>0</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>70</RightAnchorOffset>
+    <Style_Transparent>false</Style_Transparent>
+    <Size>
+      <CX>400</CX>
+      <CY>400</CY>
+    </Size>
+  </Screen>
+
+  <!-- Image for an EQ map, move to EQUI_Animations at some point -->
+  <TextureInfo item="cart.tga">
+    <Size>
+      <CX>64</CX>
+      <CY>64</CY>
+    </Size>
+  </TextureInfo>
+
+  <Ui2DAnimation item="A_MapPiece">
+    <Cycle>false</Cycle>
+    <Frames>
+      <Texture>cart.tga</Texture>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <CX>512</CX>
+        <CY>399</CY>
+      </Size>
+      <Hotspot>
+        <X>0</X>
+        <Y>0</Y>
+      </Hotspot>
+    </Frames>
+  </Ui2DAnimation>
+
+  <!-- Panning -->
+  <Button item="MVW_PanLeftButton">
+    <ScreenID>MVW_PanLeftButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>50</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Template>BDT_PanLeft</Template>
+  </Button>
+  <Button item="MVW_PanRightButton">
+    <ScreenID>MVW_PanRightButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>47</X>
+      <Y>50</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Template>BDT_PanRight</Template>
+  </Button>
+
+  <Button item="MVW_PanUpButton">
+    <ScreenID>MVW_PanUpButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>24</X>
+      <Y>50</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Template>BDT_PanUp</Template>
+  </Button>
+
+  <Button item="MVW_PanDownButton">
+    <ScreenID>MVW_PanDownButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>24</X>
+      <Y>72</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Template>BDT_PanDown</Template>
+  </Button>
+
+  <!-- Zooming -->
+  <Button item="MVW_ZoomInButton">
+    <ScreenID>MVW_ZoomInButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>1</X>
+      <Y>72</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text />
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Zoom In. (Or use Mouse Wheel)</TooltipReference>
+    <Template>BDT_ZoomIn</Template>
+  </Button>
+
+  <Button item="MVW_ZoomOutButton">
+    <ScreenID>MVW_ZoomOutButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>47</X>
+      <Y>72</Y>
+    </Location>
+    <Size>
+      <CX>22</CX>
+      <CY>22</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text />
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Zoom Out. (Or use Mouse Wheel)</TooltipReference>
+    <Template>BDT_ZoomOut</Template>
+  </Button>
+
+  <!-- Map background -->
+  <Screen item="MVW_MapRenderArea">
+    <ScreenID>MVW_MapRenderArea</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>49</TopAnchorOffset>
+    <BottomAnchorOffset>24</BottomAnchorOffset>
+    <LeftAnchorOffset>2</LeftAnchorOffset>
+    <RightAnchorOffset>24</RightAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <Style_Border>false</Style_Border>
+    <Style_Transparent>true</Style_Transparent>
+    </Screen>
+
+  <StaticAnimation item="MVW_MapPiece1">
+    <ScreenID>MapPiece</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>0</TopAnchorOffset>
+    <BottomAnchorOffset>0</BottomAnchorOffset>
+    <LeftAnchorOffset>0</LeftAnchorOffset>
+    <RightAnchorOffset>0</RightAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Animation>A_MapPiece01</Animation>
+  </StaticAnimation>
+
+  <StaticAnimation item="MVW_MapPiece2">
+    <ScreenID>MapPiece2</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>0</TopAnchorOffset>
+    <BottomAnchorOffset>0</BottomAnchorOffset>
+    <LeftAnchorOffset>0</LeftAnchorOffset>
+    <RightAnchorOffset>0</RightAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Animation>A_MapPiece02</Animation>
+  </StaticAnimation>
+
+  <Label item="MVW_MinZLabel">
+    <ScreenID>MVW_MinZLabel</ScreenID>
+    <Font>4</Font>
+    <Text>Low</Text>
+    <TextColor>
+      <R>240</R>
+      <G>130</G>
+      <B>0</B>
+    </TextColor>
+    <Size>
+      <CX>44</CX>
+      <CY>15</CY>
+    </Size>
+    <AlignCenter>false</AlignCenter>
+    <Location>
+      <X>2</X>
+      <Y>302</Y>
+    </Location>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <BottomAnchorOffset>24</BottomAnchorOffset>
+    <TopAnchorOffset>39</TopAnchorOffset>
+    <RightAnchorOffset>183</RightAnchorOffset>
+    <LeftAnchorOffset>214</LeftAnchorOffset>
+  </Label>
+
+  <Label item="MVW_MaxZLabel">
+    <ScreenID>MVW_MaxZLabel</ScreenID>
+    <Font>4</Font>
+    <Text>High</Text>
+    <TextColor>
+      <R>240</R>
+      <G>130</G>
+      <B>0</B>
+    </TextColor>
+    <Size>
+      <CX>44</CX>
+      <CY>15</CY>
+    </Size>
+    <AlignCenter>false</AlignCenter>
+    <Location>
+      <X>2</X>
+      <Y>337</Y>
+    </Location>
+    <AutoStretch>true</AutoStretch>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>false</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <LeftAnchorOffset>181</LeftAnchorOffset>
+    <RightAnchorOffset>150</RightAnchorOffset>
+    <TopAnchorOffset>39</TopAnchorOffset>
+    <BottomAnchorOffset>24</BottomAnchorOffset>
+  </Label>
+
+  <Screen item="MVW_MapToolBar">
+    <ScreenID>MVW_MapToolBar</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <TopAnchorOffset>33</TopAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <BottomAnchorOffset>2</BottomAnchorOffset>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <LeftAnchorOffset>2</LeftAnchorOffset>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <RightAnchorOffset>2</RightAnchorOffset>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+  </Screen>
+
+  <Button item="MVW_SearchHideButton">
+    <ScreenID>MVW_SearchHideButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>49</TopAnchorOffset>
+    <BottomAnchorOffset>71</BottomAnchorOffset>
+    <LeftAnchorOffset>110</LeftAnchorOffset>
+    <RightAnchorOffset>155</RightAnchorOffset>
+    <Text>Hide</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Hides the search list.</TooltipReference>
+    <Template>BDT_Normal</Template>
+  </Button>
+
+  <Listbox item="MVW_SearchList">
+    <ScreenID>MVW_SearchList</ScreenID>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <RelativePosition>true</RelativePosition>
+    <Size>
+      <CX>200</CX>
+      <CY>20</CY>
+    </Size>
+    <Columns>
+      <Width>100</Width>
+      <Heading>Matched Labels</Heading>
+    </Columns>
+    <Style_Border>true</Style_Border>
+    <Style_VScroll>true</Style_VScroll>
+    <Style_AutoVScroll>true</Style_AutoVScroll>
+    <Stlye_Transparent>false</Stlye_Transparent>
+  </Listbox>
+
+  <Button item="MVW_Spacer">
+    <ScreenID>MVW_Spacer</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Size>
+      <CX>200</CX>
+      <CY>1</CY>
+    </Size>
+  </Button>
+
+  <HorizontalLayoutBox item="MVW_SearchLayout">
+    <ScreenID>MVW_SearchLayout</ScreenID>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorOffset>49</TopAnchorOffset>
+    <BottomAnchorOffset>1</BottomAnchorOffset>
+    <LeftAnchorOffset>1</LeftAnchorOffset>
+    <RightAnchorOffset>70</RightAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <Spacing>4</Spacing>
+    <Style_Border>false</Style_Border>
+    <Style_Transparent>true</Style_Transparent>
+    <Pieces>MVW_SearchList</Pieces>
+    <Pieces>MVW_Spacer</Pieces>
+  </HorizontalLayoutBox>
+
+  <Page item="MapBackgroundLight">
+    <ScreenID>MapPage</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawTemplate>WDT_Def</DrawTemplate>
+    <TabText>Light</TabText>
+    <TabTextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TabTextColor>
+    <TabTextActiveColor>
+      <R>255</R>
+      <G>255</G>
+      <B>0</B>
+    </TabTextActiveColor>
+    <Style_Sizable>true</Style_Sizable>
+    <Pieces>MVW_MapPiece1</Pieces>
+  </Page>
+
+  <Page item="MapBackgroundDark">
+    <ScreenID>MapPage</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawTemplate>WDT_Def</DrawTemplate>
+    <TabText>Dark</TabText>
+    <TabTextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TabTextColor>
+    <TabTextActiveColor>
+      <R>255</R>
+      <G>255</G>
+      <B>0</B>
+    </TabTextActiveColor>
+    <Style_Sizable>true</Style_Sizable>
+    <Pieces>MVW_MapPiece2</Pieces>
+  </Page>
+
+  <TabBox item="MVW_BackgroundColorTabs">
+    <ScreenID>MVW_Subwindows</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TabBorderTemplate>FT_MVWTabBorder</TabBorderTemplate>
+    <PageBorderTemplate>FT_MVWPageBorder</PageBorderTemplate>
+    <Pages>Page:MapBackgroundLight</Pages>
+    <Pages>Page:MapBackgroundDark</Pages>
+  </TabBox>
+
+  <Page item="MapPage">
+    <ScreenID>MapPage</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawTemplate>WDT_Def</DrawTemplate>
+    <TabText>Player</TabText>
+    <TabTextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TabTextColor>
+    <TabTextActiveColor>
+      <R>255</R>
+      <G>255</G>
+      <B>0</B>
+    </TabTextActiveColor>
+    <Style_Sizable>true</Style_Sizable>
+	<Pieces>TabBox:MVW_BackgroundColorTabs</Pieces>
+    	<Pieces>Screen:MVW_MapRenderArea</Pieces>
+    	<Pieces>MVW_MapIconButton</Pieces>
+    	<Pieces>MVW_ToolbarButton</Pieces>
+    	<Pieces>MVW_MinZLabel</Pieces>
+    	<Pieces>MVW_MaxZLabel</Pieces>
+    	<Pieces>MVW_MinZEditBox</Pieces>
+    	<Pieces>MVW_MaxZEditBox</Pieces>
+    	<Pieces>MVW_LayersLabel</Pieces>
+    	<Pieces>MVW_Layer1Button</Pieces>
+    	<Pieces>MVW_Layer2Button</Pieces>
+    	<Pieces>MVW_Layer3Button</Pieces>
+    	<Pieces>MVW_LayerVisibleLabel</Pieces>
+    	<Pieces>MVW_LayerActiveLabel</Pieces>
+    	<Pieces>MVW_Layer1ActiveButton</Pieces>
+    	<Pieces>MVW_Layer2ActiveButton</Pieces>
+    	<Pieces>MVW_Layer3ActiveButton</Pieces>
+    	<Pieces>MVW_ZFilterButton</Pieces>
+    	<Pieces>MVW_LabelsToggleButton</Pieces>
+    	<Pieces>MVW_Layer0Button</Pieces>
+    	<Pieces>MVW_LoadCurrent</Pieces>
+    	<Pieces>MVW_PanLeftButton</Pieces>
+    	<Pieces>MVW_PanRightButton</Pieces>
+    	<Pieces>MVW_PanUpButton</Pieces>
+    	<Pieces>MVW_PanDownButton</Pieces>
+    	<Pieces>MVW_ZoomInButton</Pieces>
+    	<Pieces>MVW_ZoomOutButton</Pieces>
+    	<Pieces>MVW_Find</Pieces>
+    	<Pieces>MVW_EndFind</Pieces>
+    	<Pieces>MVW_FindAutoZoom</Pieces>
+    	<Pieces>MVW_MapsDirCombobox</Pieces>
+    	<Pieces>MVW_PanResetButton</Pieces>
+    	<Pieces>MVW_ShowGroupButton</Pieces>
+    	<Pieces>MVW_ShowNamesButton</Pieces>
+    	<Pieces>MVW_SearchBox</Pieces>
+    	<Pieces>MVW_SearchButton</Pieces>
+    	<Pieces>MVW_SearchClearButton</Pieces>
+    	<Pieces>MVW_MapZoneGuide</Pieces>
+    	<Pieces>HorizontalLayoutBox:MVW_SearchLayout</Pieces>
+    	<Pieces>MVW_SearchHideButton</Pieces>
+  </Page>
+
+  <Screen item="MVW_AtlasRenderArea">
+    <ScreenID>MVW_AtlasRenderArea</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <TopAnchorOffset>30</TopAnchorOffset>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>true</Style_Transparent>
+  </Screen>
+
+  <Combobox item="MVW_AtlasDirCombobox">
+    <ScreenID>MVW_AtlasDirCombobox</ScreenID>
+    <DrawTemplate>WDT_Inner</DrawTemplate>
+    <AutoStretchList>true</AutoStretchList>
+    <Location>
+      <X>2</X>
+      <Y>2</Y>
+    </Location>
+    <Size>
+      <CX>150</CX>
+      <CY>24</CY>
+    </Size>
+    <ListHeight>60</ListHeight>
+    <Button>BDT_Combo</Button>
+    <Style_Border>true</Style_Border>
+  </Combobox>
+
+  <Button item="MVW_AtlasZoneGuide">
+    <ScreenID>MVW_AtlasZoneGuide</ScreenID>
+    <AutoStretch>true</AutoStretch>
+    <RelativePosition>true</RelativePosition>
+    <LeftAnchorOffset>92</LeftAnchorOffset>
+    <TopAnchorOffset>4</TopAnchorOffset>
+    <RightAnchorOffset>2</RightAnchorOffset>
+    <BottomAnchorOffset>26</BottomAnchorOffset>
+    <LeftAnchorToLeft>false</LeftAnchorToLeft>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <BottomAnchorToTop>true</BottomAnchorToTop>
+    <Style_Transparent>false</Style_Transparent>
+    <Style_Checkbox>false</Style_Checkbox>
+    <Text>Zone Guide</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <TooltipReference>Toggle the visibility of the Zone Guide.</TooltipReference>
+    <Template>BDT_Normal</Template>
+  </Button>
+
+  <Page item="AtlasPage">
+    <ScreenID>AtlasPage</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawTemplate>WDT_Def</DrawTemplate>
+    <TabText>Atlas</TabText>
+    <TabTextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TabTextColor>
+    <TabTextActiveColor>
+      <R>255</R>
+      <G>255</G>
+      <B>0</B>
+    </TabTextActiveColor>
+    <Style_Sizable>true</Style_Sizable>
+    <Pieces>Screen:MVW_AtlasRenderArea</Pieces>
+    <Pieces>MVW_AtlasDirCombobox</Pieces>
+    <Pieces>MVW_AtlasZoneGuide</Pieces>
+  </Page>
+
+  <TabBox item="MVW_Subwindows">
+    <ScreenID>MVW_Subwindows</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <AutoStretch>true</AutoStretch>
+    <TopAnchorToTop>true</TopAnchorToTop>
+    <BottomAnchorToTop>false</BottomAnchorToTop>
+    <LeftAnchorToLeft>true</LeftAnchorToLeft>
+    <RightAnchorToLeft>false</RightAnchorToLeft>
+    <TabBorderTemplate>FT_DefTabBorder</TabBorderTemplate>
+    <PageBorderTemplate>FT_DefPageBorder</PageBorderTemplate>
+    <Pages>Page:MapPage</Pages>
+    <Pages>Page:AtlasPage</Pages>
+  </TabBox>
+
+  <Screen item="MapViewWnd">
+    <RelativePosition>false</RelativePosition>
+    <Location>
+      <X>100</X>
+      <Y>80</Y>
+    </Location>
+    <Size>
+      <CX>590</CX>
+      <CY>470</CY>
+    </Size>
+    <NoWrap>false</NoWrap>
+    <TooltipReference>Map Viewer</TooltipReference>
+    <DrawTemplate>WDT_Rounded</DrawTemplate>
+    <Style_Titlebar>true</Style_Titlebar>
+    <Style_Closebox>true</Style_Closebox>
+    <Style_Minimizebox>true</Style_Minimizebox>
+    <Style_Border>true</Style_Border>
+    <Style_Sizable>true</Style_Sizable>
+    <Text>Map</Text>
+    <Pieces>MVW_Subwindows</Pieces>
+  </Screen>
+
+  <Screen item="MapViewMap">
+    <Size>
+      <CX>500</CX>
+      <CY>500</CY>
+    </Size>
+  </Screen>
+</XML>

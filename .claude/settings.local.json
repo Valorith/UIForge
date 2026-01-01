@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:wiki.project1999.com)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.railway.com)",
+      "Bash(cd:*)",
+      "Bash(npm install)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(grep:*)",
+      "Bash(find \"/mnt/c/Users/rgagn/OneDrive/Documents/Github Projects/UIForce/Example UIs/AYA_SoR\" -maxdepth 1 -name \"EQUI_*.xml\" -exec bash -c 'grep -h \"\"\"\"^<[A-Z][a-zA-Z0-9]*\"\"\"\" \"\"\"\"$1\"\"\"\" | sed \"\"\"\"s/^<\\([a-zA-Z0-9]*\\).*/\\1/\"\"\"\" | sort | uniq' _ {})",
+      "Bash(xargs -I {} sh -c 'echo \"\"\"\"=== {} ===\"\"\"\"; grep \"\"\"\"^<[A-Z]\"\"\"\" {} | sed \"\"\"\"s/^<\\([a-zA-Z0-9]*\\).*/\\1/\"\"\"\" | sort -u')"
+    ]
+  }
+}

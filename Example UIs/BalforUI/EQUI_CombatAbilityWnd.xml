@@ -1,0 +1,323 @@
+<?xml version = "1.0"?>
+<XML ID = "EQInterfaceDefinitionLanguage">
+	<Schema xmlns = "EverQuestData" xmlns:dt = "EverQuestDataTypes"/>
+
+	<Button item = "CAW_CombatEffectButton">
+		<ScreenID>CAW_CombatEffectButton</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>5</Y>
+		</Location>
+		<Size>
+			<CX>15</CX>
+			<CY>15</CY>
+		</Size>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<TooltipReference></TooltipReference>
+		<Style_Checkbox>false</Style_Checkbox>
+
+		<ButtonDrawTemplate>
+			<Normal>BlueIconBackground</Normal>
+			<NormalDecal>BuffIcons</NormalDecal>
+		</ButtonDrawTemplate>
+		<DecalOffset>
+			<X>0</X>
+			<Y>0</Y>
+		</DecalOffset>
+		<DecalSize>
+			<CX>15</CX>
+			<CY>15</CY>
+		</DecalSize>
+	</Button>
+
+	<Label item ="CAW_CombatEffectLabel">
+		<ScreenID>CAW_CombatEffectLabel</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>13</X>
+			<Y>3</Y>
+		</Location>
+		<Size>
+			<CX>120</CX>
+			<CY>20</CY>
+		</Size>
+		<Text>No Effect</Text>
+		<TextColor>
+				<R>255</R>
+				<G>255</G>
+				<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+	</Label>
+
+
+	<Gauge item = "CAW_CombatEffectTimeRemainingGauge">
+		<ScreenID>CAW_CombatEffectTimeRemainingGauge</ScreenID>
+
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>24</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>10</CY>
+		</Size>
+	
+		<GaugeOffsetY>0</GaugeOffsetY>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+
+		<FillTint>
+				<R>240</R>
+				<G>0</G>
+				<B>0</B>
+		</FillTint>
+
+		<LinesFillTint>
+				<R>0</R>
+				<G>0</G>
+				<B>0</B>
+		</LinesFillTint>
+
+		<DrawLinesFill>false</DrawLinesFill>
+
+		<EQType>26</EQType>
+
+		<GaugeDrawTemplate>
+			<Background>A_GaugeBackground</Background>
+			<Fill>A_GaugeFill</Fill>
+			<Lines>A_GaugeLines</Lines>
+			<LinesFill>A_GaugeLinesFill</LinesFill>
+			<!--<EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
+			<EndCapRight>A_GaugeEndCapRight</EndCapRight>-->
+		</GaugeDrawTemplate>
+	
+	</Gauge>
+
+	<Button item = "CAW_Button1">
+		<ScreenID>CAW_Button1</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>35</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>20</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		
+		<DecalSize>
+			<CX>0</CX>
+			<CY>0</CY>
+		</DecalSize>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "CAW_Button2">
+		<ScreenID>CAW_Button2</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>55</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>20</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<DecalSize>
+			<CX>20</CX>
+			<CY>20</CY>
+		</DecalSize>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "CAW_Button3">
+		<ScreenID>CAW_Button3</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>75</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>20</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<DecalSize>
+			<CX>20</CX>
+			<CY>20</CY>
+		</DecalSize>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "CAW_Button4">
+		<ScreenID>CAW_Button4</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>95</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>20</CY>
+		</Size>
+		<Text></Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<DecalSize>
+			<CX>20</CX>
+			<CY>20</CY>
+		</DecalSize>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Button item = "CAW_Button5">
+		<ScreenID>CAW_Button5</ScreenID>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+	</Button>		
+
+	<Button item = "CAW_Button6">
+		<ScreenID>CAW_Button6</ScreenID>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+	</Button>	
+
+	<Button item = "CAW_Button7">
+		<ScreenID>CAW_Button7</ScreenID>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+	</Button>		
+
+	<Button item = "CAW_Button8">
+		<ScreenID>CAW_Button8</ScreenID>
+		<Size>
+			<CX>0</CX>
+			<CY>0</CY>
+		</Size>
+	</Button>	
+
+
+	<Button item = "CAW_OpenCombatSkillSelectWnd">
+		<ScreenID>CAW_OpenCombatSkillSelectWnd</ScreenID>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>0</X>
+			<Y>120</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>25</CY>
+		</Size>
+		<Font>2</Font>
+		<Text>Combat Skills</Text>
+		<TooltipReference>Open up a window with detailed information on all of your known combat skills.</TooltipReference>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>0</B>
+		</TextColor>
+		<ButtonDrawTemplate>
+			<Normal>A_BtnNormal</Normal>
+			<Pressed>A_BtnPressed</Pressed>
+			<Flyby>A_BtnFlyby</Flyby>
+			<Disabled>A_BtnDisabled</Disabled>
+			<PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+		</ButtonDrawTemplate>
+	</Button>
+
+	<Screen item = "CombatAbilityWnd">
+		<ScreenID/>
+		<Font>1</Font>
+		<RelativePosition>false</RelativePosition>
+		<Location>
+			<X>50</X>
+			<Y>50</Y>
+		</Location>
+		<Size>
+			<CX>150</CX>
+			<CY>150</CY>
+		</Size>
+		<Text>Combat Abilities</Text>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<DrawTemplate>WDT_Inner</DrawTemplate>
+		<Style_Titlebar>false</Style_Titlebar>
+		<Style_Closebox>false</Style_Closebox>
+		<Style_Minimizebox>false</Style_Minimizebox>
+		<Style_Border>true</Style_Border>
+		<Style_Sizable>false</Style_Sizable>
+		<Pieces>CAW_CombatEffectTimeRemainingGauge</Pieces>
+		<Pieces>CAW_CombatEffectButton</Pieces>
+		<Pieces>CAW_CombatEffectLabel</Pieces>
+		<Pieces>CAW_OpenCombatSkillSelectWnd</Pieces>
+		<Pieces>CAW_Button1</Pieces>
+		<Pieces>CAW_Button2</Pieces>
+		<Pieces>CAW_Button3</Pieces>
+		<Pieces>CAW_Button4</Pieces>
+		<Pieces>CAW_Button5</Pieces>
+		<Pieces>CAW_Button6</Pieces>
+		<Pieces>CAW_Button7</Pieces>
+		<Pieces>CAW_Button8</Pieces>
+
+	</Screen>
+
+</XML>

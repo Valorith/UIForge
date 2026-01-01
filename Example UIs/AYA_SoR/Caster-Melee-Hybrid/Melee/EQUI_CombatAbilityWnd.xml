@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<XML ID="EQInterfaceDefinitionLanguage">
+  <Schema xmlns="EverQuestData" xmlns:dt="EverQuestDataTypes" />
+<!--AYA UI Note...By Javin B`Dorn@Tribunal-->
+<!-- Original Xml Copyright (c) 2000 - 2006 Sony Online Entertaiment all rights reserved. -->
+<!-- AYA UI Xml Code and Files ... -->
+<!-- Copyright (c) 2002-2006 AYA NANASE all rights reserved. -->
+<!-- Homepage http://jlamantia.com -->
+
+
+    <Ui2DAnimation item="ACATKDecal">
+                    <Cycle>true</Cycle>
+                    <Frames>
+                            <Texture>AYApetback.dds</Texture>
+                            <Location>
+                                    <X>5</X>
+                                    <Y>130</Y>
+                            </Location>
+                            <Size>
+                                    <CX>219</CX>
+                                    <CY>14</CY>
+                            </Size>
+                            <Hotspot>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                            </Hotspot>
+                            <Duration>1000</Duration>
+                    </Frames>
+            </Ui2DAnimation>
+    <Ui2DAnimation item="HasteDecal">
+                    <Cycle>true</Cycle>
+                    <Frames>
+                            <Texture>AYApetback.dds</Texture>
+                            <Location>
+                                    <X>60</X>
+                                    <Y>194</Y>
+                            </Location>
+                            <Size>
+                                    <CX>164</CX>
+                                    <CY>14</CY>
+                            </Size>
+                            <Hotspot>
+                                    <X>0</X>
+                                    <Y>0</Y>
+                            </Hotspot>
+                            <Duration>1000</Duration>
+                    </Frames>
+            </Ui2DAnimation>
+
+	<StaticAnimation item="CAW_ACATKDecal">
+                <ScreenID>CAW_ACATKDecal</ScreenID>
+                <RelativePosition>true</RelativePosition>
+                <Location>
+                        <X>11</X>
+                        <Y>100</Y>
+                </Location>
+                <Size>
+                        <CX>219</CX>
+                        <CY>14</CY>
+                </Size>
+                <Animation>ACATKDecal</Animation>
+        </StaticAnimation>
+	<StaticAnimation item="CAW_HasteDecal">
+                <ScreenID>CAW_HasteDecal</ScreenID>
+                <RelativePosition>true</RelativePosition>
+                <Location>
+                        <X>66</X>
+                        <Y>86</Y>
+                </Location>
+                <Size>
+                        <CX>164</CX>
+                        <CY>14</CY>
+                </Size>
+                <Animation>HasteDecal</Animation>
+        </StaticAnimation>
+
+  <Button item="CAW_Button1">
+    <ScreenID>CAW_Button1</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>1</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>1</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+      <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button2">
+    <ScreenID>CAW_Button2</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>15</Y>
+    </Location>
+    <Size>
+       <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>2</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+      <CX>8</CX>
+      <CY>121</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button3">
+    <ScreenID>CAW_Button3</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>29</Y>
+    </Location>
+    <Size>
+       <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>3</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+      <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button4">
+    <ScreenID>CAW_Button4</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>2</X>
+      <Y>42</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>4</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+       <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button5">
+    <ScreenID>CAW_Button5</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>131</X>
+      <Y>1</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>5</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+       <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button6">
+    <ScreenID>CAW_Button6</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>131</X>
+      <Y>15</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>6</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+       <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button7">
+    <ScreenID>CAW_Button7</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>131</X>
+      <Y>29</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>7</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+       <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+  <Button item="CAW_Button8">
+    <ScreenID>CAW_Button8</ScreenID>
+    <Font>0</Font>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>131</X>
+      <Y>42</Y>
+    </Location>
+    <Size>
+      <CX>124</CX>
+      <CY>14</CY>
+    </Size>
+    <Text>8</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <DecalSize>
+       <CX>121</CX>
+      <CY>8</CY>
+    </DecalSize>
+    <ButtonDrawTemplate>
+      <Normal>A_SmallBtnNormal</Normal>
+      <Pressed>A_SmallBtnPressed</Pressed>
+      <Flyby>A_SmallBtnFlyby</Flyby>
+      <Disabled>A_SmallBtnDisabled</Disabled>
+      <PressedFlyby>A_SmallBtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+  </Button>
+
+  <Button item="CAW_CombatEffectButton">
+    <ScreenID>CAW_CombatEffectButton</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>14</X>
+      <Y>60</Y>
+    </Location>
+    <Size>
+      <CX>37</CX>
+      <CY>37</CY>
+    </Size>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <TooltipReference>Left-click to remove this effect</TooltipReference>
+    <Style_Checkbox>false</Style_Checkbox>
+    <ButtonDrawTemplate>
+      <Normal>BlueIconBackground</Normal>
+      <NormalDecal>BuffIcons</NormalDecal>
+    </ButtonDrawTemplate>
+    <DecalOffset>
+      <X>0</X>
+      <Y>0</Y>
+    </DecalOffset>
+    <DecalSize>
+      <CX>38</CX>
+      <CY>38</CY>
+    </DecalSize>
+  </Button>
+  <Label item="CAW_CombatEffectLabel">
+    <ScreenID>CAW_CombatEffectLabel</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>65</X>
+      <Y>60</Y>
+    </Location>
+    <Size>
+      <CX>95</CX>
+      <CY>15</CY>
+    </Size>
+    <Text>Leg Strike</Text>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <NoWrap>true</NoWrap>
+    <AlignCenter>True</AlignCenter>
+    <AlignRight>false</AlignRight>
+    <Font>2</Font>
+  </Label>
+  <Gauge item="CAW_CombatEffectTimeRemainingGauge">
+    <ScreenID>CAW_CombatEffectTimeRemainingGauge</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>60</X>
+      <Y>74</Y>
+    </Location>
+    <Size>
+      <CX>135</CX>
+      <CY>8</CY>
+    </Size>
+    <GaugeOffsetY>0</GaugeOffsetY>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <FillTint>
+      <R>33</R>
+      <G>13</G>
+      <B>236</B>
+    </FillTint>
+    <LinesFillTint>
+      <R>0</R>
+      <G>0</G>
+      <B>0</B>
+    </LinesFillTint>
+    <DrawLinesFill>false</DrawLinesFill>
+    <EQType>26</EQType>
+    <GaugeDrawTemplate>
+      <Background>A_GaugeBackground</Background>
+      <Fill>A_GaugeFill</Fill>
+      <Lines>A_GaugeLines</Lines>
+      <LinesFill>A_GaugeLinesFill</LinesFill>
+      <EndCapLeft>A_GaugeEndCapLeft</EndCapLeft>
+      <EndCapRight>A_GaugeEndCapRight</EndCapRight>
+    </GaugeDrawTemplate>
+  </Gauge>
+ 
+ <Button item="CAW_OpenCombatSkillSelectWnd">
+    <ScreenID>CAW_OpenCombatSkillSelectWnd</ScreenID>
+    <RelativePosition>true</RelativePosition>
+    <Location>
+      <X>215</X>
+      <Y>68</Y>
+    </Location>
+    <Size>
+      <CX>15</CX>
+      <CY>15</CY>
+    </Size>
+    <Text>L</Text>
+    <TooltipReference>Open up a window with detailed information on all of your known combat skills.</TooltipReference>
+    <TextColor>
+      <R>255</R>
+      <G>255</G>
+      <B>255</B>
+    </TextColor>
+    <ButtonDrawTemplate>
+      <Normal>A_BtnNormal</Normal>
+      <Pressed>A_BtnPressed</Pressed>
+      <Flyby>A_BtnFlyby</Flyby>
+      <Disabled>A_BtnDisabled</Disabled>
+      <PressedFlyby>A_BtnPressedFlyby</PressedFlyby>
+    </ButtonDrawTemplate>
+    <Font>1</Font>
+  </Button>
+ 
+    <InvSlot item="CAW_InvSlot22">
+      <ScreenID>CAW_InvSlot22</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>268</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 23</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot23">
+      <ScreenID>CAW_InvSlot23</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>293</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 24</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot24">
+      <ScreenID>CAW_InvSlot24</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>318</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 25</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot25">
+      <ScreenID>CAW_InvSlot25</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>343</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 26</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+ 
+    <InvSlot item="CAW_InvSlot26">
+      <ScreenID>CAW_InvSlot26</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>268</X>
+        <Y>27</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 27</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot27">
+      <ScreenID>CAW_InvSlot27</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>293</X>
+        <Y>27</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 28</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot28">
+      <ScreenID>CAW_InvSlot28</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>318</X>
+        <Y>27</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 29</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot29">
+      <ScreenID>CAW_InvSlot29</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>343</X>
+        <Y>27</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 30</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+
+    <InvSlot item="CAW_InvSlot31">
+      <ScreenID>CAW_InvSlot31</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>368</X>
+        <Y>2</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 31</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+    </InvSlot>
+    <InvSlot item="CAW_InvSlot32">
+      <ScreenID>CAW_InvSlot32</ScreenID>
+      <!--<Font>3</Font>-->
+      <RelativePosition>true</RelativePosition>
+      <Location>
+        <X>368</X>
+        <Y>27</Y>
+      </Location>
+      <Size>
+        <CX>25</CX>
+        <CY>25</CY>
+      </Size>
+      <Background>A_RecessedBox30</Background>
+      <EQType>inventory/Equip 32</EQType>
+      <Style_VScroll>false</Style_VScroll>
+      <Style_HScroll>false</Style_HScroll>
+      <Style_Transparent>false</Style_Transparent>
+      <!--<TooltipReference/>-->
+  </InvSlot>
+
+	<!-- Inventry Info -->
+	<!-- IS_L_EAR           1 -->	
+	<InvSlot item="CAW_InvSlot1#">
+		<ScreenID>CAW_InvSlot1</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>319</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 1</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_HEAD            2 -->
+	<InvSlot item="CAW_InvSlot2#">
+		<ScreenID>CAW_InvSlot2</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>299</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 2</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_FACE            3 -->
+	<InvSlot item="CAW_InvSlot3#">
+		<ScreenID>CAW_InvSlot3</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>339</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 3</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_R_EAR           4 -->
+	<InvSlot item="CAW_InvSlot4#">
+		<ScreenID>CAW_InvSlot4</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>339</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 4</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_NECK            5 -->
+	<InvSlot item="CAW_InvSlot5#">
+		<ScreenID>CAW_InvSlot5</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>319</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 5</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_SHOULDERS       6 -->
+	<InvSlot item="CAW_InvSlot6#">
+		<ScreenID>CAW_InvSlot6</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>299</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 6</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_ARMS            7 -->
+	<InvSlot item="CAW_InvSlot7#">
+		<ScreenID>CAW_InvSlot7</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>279</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 7</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_ABOUT_BODY (Back)       8 -->
+	<InvSlot item="CAW_InvSlot8#">
+		<ScreenID>CAW_InvSlot8</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>379</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 8</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_L_WRIST         9 -->
+	<InvSlot item="CAW_InvSlot9#">
+		<ScreenID>CAW_InvSlot9</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>279</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 9</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_R_WRIST         10 -->
+	<InvSlot item="CAW_InvSlot10#">
+		<ScreenID>CAW_InvSlot10</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>259</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 10</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_RANGE           11 -->
+	<InvSlot item="CAW_InvSlot11#">
+		<ScreenID>CAW_InvSlot11</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>279</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 11</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_HANDS           12 -->
+	<InvSlot item="CAW_InvSlot12#">
+		<ScreenID>CAW_InvSlot12</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>379</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 12</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_PRIMARY         13 -->
+	<InvSlot item="CAW_InvSlot13#">
+		<ScreenID>CAW_InvSlot13</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>239</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 13</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_SECONDARY       14 -->
+	<InvSlot item="CAW_InvSlot14#">
+		<ScreenID>CAW_InvSlot14</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>259</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 14</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_L_FINGERS       15 -->
+	<InvSlot item="CAW_InvSlot15#">
+		<ScreenID>CAW_InvSlot15</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>339</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 15</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_R_FINGERS       16 -->
+	<InvSlot item="CAW_InvSlot16#">
+		<ScreenID>CAW_InvSlot16</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>359</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 16</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- CHEST               17 -->
+	<InvSlot item="CAW_InvSlot17#">
+		<ScreenID>CAW_InvSlot17</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>259</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 17</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_LEGS            18 -->
+	<InvSlot item="CAW_InvSlot18#">
+		<ScreenID>CAW_InvSlot18</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>299</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 18</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_FEET            19 -->
+	<InvSlot item="CAW_InvSlot19#">
+		<ScreenID>CAW_InvSlot19</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>319</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 19</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_WAIST           20 -->
+	<InvSlot item="CAW_InvSlot20#">
+		<ScreenID>CAW_InvSlot20</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>359</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 20</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<!-- IS_AMMO            21 -->
+	<InvSlot item="CAW_InvSlot21#">
+		<ScreenID>CAW_InvSlot21</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>359</X>
+			<Y>93</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 22</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<InvSlot item="CAW_InvSlot0#">
+		<ScreenID>CAW_InvSlot0</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>379</X>
+			<Y>53</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 0</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+	<InvSlot item="CAW_InvSlot021#">
+		<ScreenID>CAW_InvSlot0</ScreenID>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>239</X>
+			<Y>73</Y>
+		</Location>
+		<Size>
+			<CX>20</CX>
+			<CY>20</CY>
+		</Size>
+		<Background>A_RecessedBox20</Background>
+		<EQType>inventory/Equip 21</EQType>
+		<Style_VScroll>false</Style_VScroll>
+		<Style_HScroll>false</Style_HScroll>
+		<Style_Transparent>false</Style_Transparent>
+		<!--<TooltipReference/>-->
+	</InvSlot>
+
+ 	<!-- Stats Info -->
+	
+	<Label item="CAW_MY_VelocityLabel">
+		<ScreenID>CAW_MY_VelocityLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>68</X>
+			<Y>87</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>VEL</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>	
+	<Label item="CAW_Velocity">
+		<ScreenID>PlayerVelocity</ScreenID>
+		<EQType>401</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>90</X>
+			<Y>85</Y>
+		</Location>
+		<Size>
+			<CX>28</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>1900</Text>
+		<TextColor>
+			<R>0</R>
+			<G>255</G>
+			<B>0</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>true</AlignCenter>
+		<AlignLeft>false</AlignLeft>
+	</Label>
+	<Label item="CAW_MY_HasteLabel">
+		<ScreenID>CAW_MY_HasteLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>123</X>
+			<Y>87</Y>
+		</Location>
+		<Size>
+			<CX>30</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>HAST</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAW_Haste">
+		<ScreenID>PlayerHaste</ScreenID>
+		<EQType>211</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>147</X>
+			<Y>85</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>1900</Text>
+		<TextColor>
+			<R>0</R>
+			<G>255</G>
+			<B>0</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	</Label>	
+	<Label item="CAW_HastePercent">
+		<Font>3</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>172</X>
+			<Y>85</Y>
+		</Location>
+		<Size>
+			<CX>16</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>%</Text>
+		<TextColor>
+			<R>0</R>
+			<G>255</G>
+			<B>0</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAWFavorNumber">
+		<EQType>117</EQType>
+		<!--<Font>3</Font>-->
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>177</X>
+			<Y>85</Y>
+		</Location>
+		<Size>
+			<CX>52</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>99:99</Text>
+		<TextColor>
+			<R>0</R>
+			<G>255</G>
+			<B>0</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+	</Label>
+	
+	
+	<Label item="CAW_MitLabel">
+		<ScreenID>CAW_ACMitigationLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>15</X>
+			<Y>101</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>MIT</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAW_ACMitigation">
+		<EQType>22</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>37</X>
+			<Y>99</Y>
+		</Location>
+		<Size>
+			<CX>28</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>15000</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	</Label>
+	<Label item="CAW_EvaLabel">
+		<ScreenID>CAW_ACEvasionLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>69</X>
+			<Y>101</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>EVA</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAW_ACEvasion">
+		<EQType>403</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>91</X>
+			<Y>99</Y>
+		</Location>
+		<Size>
+			<CX>28</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>15000</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	</Label>
+	<Label item="CAW_OffLabel">
+		<ScreenID>CAW_AtkOffenseLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>124</X>
+			<Y>101</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>OFF</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAW_AtkOffense">
+		<EQType>23</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>147</X>
+			<Y>99</Y>
+		</Location>
+		<Size>
+			<CX>28</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>15000</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	</Label>
+	<Label item="CAW_AccLabel">
+		<ScreenID>CAW_AtkAccuracyLabel</ScreenID>
+		<Font>1</Font>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>178</X>
+			<Y>101</Y>
+		</Location>
+		<Size>
+			<CX>25</CX>
+			<CY>12</CY>
+		</Size>
+		<Text>ACC</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>false</AlignRight>
+		<AlignLeft>true</AlignLeft>
+	</Label>
+	<Label item="CAW_AtkAccuracy">
+		<EQType>402</EQType>
+		<RelativePosition>true</RelativePosition>
+		<Location>
+			<X>200</X>
+			<Y>99</Y>
+		</Location>
+		<Size>
+			<CX>28</CX>
+			<CY>14</CY>
+		</Size>
+		<Text>15000</Text>
+		<TextColor>
+			<R>255</R>
+			<G>255</G>
+			<B>255</B>
+		</TextColor>
+		<NoWrap>true</NoWrap>
+		<AlignCenter>false</AlignCenter>
+		<AlignRight>true</AlignRight>
+		<AlignLeft>false</AlignLeft>
+	</Label>
+
+	
+  <Screen item="CombatAbilityWnd">
+    <ScreenID />
+    <Font>2</Font>
+    <RelativePosition>false</RelativePosition>
+    <Location>
+      <X>50</X>
+      <Y>50</Y>
+    </Location>
+    <Size>
+      <CX>401</CX>
+      <CY>115</CY>
+    </Size>
+    <Text>Combat Abilities</Text>
+    <Style_VScroll>false</Style_VScroll>
+    <Style_HScroll>false</Style_HScroll>
+    <Style_Transparent>false</Style_Transparent>
+    <DrawTemplate>WDT_RoundedNoTitle</DrawTemplate>
+    <Style_Titlebar>False</Style_Titlebar>
+    <Style_Closebox>False</Style_Closebox>
+    <Style_Minimizebox>False</Style_Minimizebox>
+    <Style_Border>false</Style_Border>
+    <Style_Sizable>false</Style_Sizable>
+    <Pieces>CAW_CombatEffectTimeRemainingGauge</Pieces>
+    <Pieces>CAW_CombatEffectButton</Pieces>
+    <Pieces>CAW_CombatEffectLabel</Pieces>
+    <Pieces>CAW_OpenCombatSkillSelectWnd</Pieces>
+    <Pieces>CAW_Button1</Pieces>
+    <Pieces>CAW_Button2</Pieces>
+    <Pieces>CAW_Button3</Pieces>
+    <Pieces>CAW_Button4</Pieces>
+    <Pieces>CAW_Button5</Pieces>
+    <Pieces>CAW_Button6</Pieces>
+    <Pieces>CAW_Button7</Pieces>
+    <Pieces>CAW_Button8</Pieces>  
+	<Pieces>CAW_InvSlot22</Pieces>
+    <Pieces>CAW_InvSlot23</Pieces>
+    <Pieces>CAW_InvSlot24</Pieces>
+    <Pieces>CAW_InvSlot25</Pieces>
+    <Pieces>CAW_InvSlot26</Pieces>
+    <Pieces>CAW_InvSlot27</Pieces>
+    <Pieces>CAW_InvSlot28</Pieces>
+    <Pieces>CAW_InvSlot29</Pieces>
+    <Pieces>CAW_InvSlot31</Pieces>
+    <Pieces>CAW_InvSlot32</Pieces>
+	<Pieces>CAW_InvSlot1#</Pieces>
+	<Pieces>CAW_InvSlot2#</Pieces>
+	<Pieces>CAW_InvSlot3#</Pieces>
+	<Pieces>CAW_InvSlot4#</Pieces>
+	<Pieces>CAW_InvSlot5#</Pieces>
+	<Pieces>CAW_InvSlot6#</Pieces>
+	<Pieces>CAW_InvSlot7#</Pieces>
+	<Pieces>CAW_InvSlot8#</Pieces>
+	<Pieces>CAW_InvSlot9#</Pieces>
+	<Pieces>CAW_InvSlot10#</Pieces>
+	<Pieces>CAW_InvSlot11#</Pieces>
+	<Pieces>CAW_InvSlot12#</Pieces>
+	<Pieces>CAW_InvSlot13#</Pieces>
+	<Pieces>CAW_InvSlot14#</Pieces>
+	<Pieces>CAW_InvSlot15#</Pieces>
+	<Pieces>CAW_InvSlot16#</Pieces>
+	<Pieces>CAW_InvSlot17#</Pieces>
+	<Pieces>CAW_InvSlot18#</Pieces>
+	<Pieces>CAW_InvSlot19#</Pieces>
+	<Pieces>CAW_InvSlot20#</Pieces>
+	<Pieces>CAW_InvSlot21#</Pieces>
+	<Pieces>CAW_InvSlot0#</Pieces>
+	<Pieces>CAW_InvSlot021#</Pieces>
+	<Pieces>CAW_MitLabel</Pieces>
+	<Pieces>CAW_ACMitigation</Pieces>
+	<Pieces>CAW_EvaLabel</Pieces>
+	<Pieces>CAW_ACEvasion</Pieces>
+	<Pieces>CAW_MY_HasteLabel</Pieces>
+	<Pieces>CAW_Haste</Pieces>
+	<Pieces>CAW_HastePercent</Pieces>
+	<Pieces>CAW_OffLabel</Pieces>
+	<Pieces>CAW_AtkOffense</Pieces>
+	<Pieces>CAW_MY_VelocityLabel</Pieces>
+	<Pieces>CAW_Velocity</Pieces>
+	<Pieces>CAW_AccLabel</Pieces>
+	<Pieces>CAW_AtkAccuracy</Pieces>
+	<Pieces>CAWFavorNumber</Pieces>
+	<Pieces>CAW_HasteDecal</Pieces>
+	<Pieces>CAW_ACATKDecal</Pieces>
+  </Screen>
+</XML>

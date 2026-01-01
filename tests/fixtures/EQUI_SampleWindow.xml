@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XML>
+
+<Screen item="SampleWindow">
+  <ScreenID>SampleWindow</ScreenID>
+  <Location>
+    <X>100</X>
+    <Y>100</Y>
+  </Location>
+  <Size>
+    <CX>300</CX>
+    <CY>250</CY>
+  </Size>
+  <Style_Titlebar>true</Style_Titlebar>
+  <Style_Closebox>true</Style_Closebox>
+  <Style_Border>true</Style_Border>
+  <Style_Sizable>true</Style_Sizable>
+
+  <Label>
+    <ScreenID>TitleLabel</ScreenID>
+    <Location>
+      <X>10</X>
+      <Y>25</Y>
+    </Location>
+    <Size>
+      <CX>280</CX>
+      <CY>20</CY>
+    </Size>
+    <Text>Sample EQ Window</Text>
+    <Font>3</Font>
+    <TextColor>
+      <A>255</A>
+      <R>255</R>
+      <G>220</G>
+      <B>100</B>
+    </TextColor>
+  </Label>
+
+  <Gauge>
+    <ScreenID>HPGauge</ScreenID>
+    <Location>
+      <X>10</X>
+      <Y>55</Y>
+    </Location>
+    <Size>
+      <CX>200</CX>
+      <CY>18</CY>
+    </Size>
+    <EQType>1</EQType>
+  </Gauge>
+
+  <Label>
+    <ScreenID>HPLabel</ScreenID>
+    <Location>
+      <X>215</X>
+      <Y>55</Y>
+    </Location>
+    <Size>
+      <CX>75</CX>
+      <CY>18</CY>
+    </Size>
+    <EQType>17</EQType>
+    <Font>2</Font>
+  </Label>
+
+  <Gauge>
+    <ScreenID>ManaGauge</ScreenID>
+    <Location>
+      <X>10</X>
+      <Y>80</Y>
+    </Location>
+    <Size>
+      <CX>200</CX>
+      <CY>18</CY>
+    </Size>
+    <EQType>2</EQType>
+  </Gauge>
+
+  <Button>
+    <ScreenID>OKButton</ScreenID>
+    <Location>
+      <X>50</X>
+      <Y>200</Y>
+    </Location>
+    <Size>
+      <CX>80</CX>
+      <CY>25</CY>
+    </Size>
+    <Text>OK</Text>
+    <Font>2</Font>
+  </Button>
+
+  <Button>
+    <ScreenID>CancelButton</ScreenID>
+    <Location>
+      <X>170</X>
+      <Y>200</Y>
+    </Location>
+    <Size>
+      <CX>80</CX>
+      <CY>25</CY>
+    </Size>
+    <Text>Cancel</Text>
+    <Font>2</Font>
+  </Button>
+
+  <Listbox>
+    <ScreenID>ItemList</ScreenID>
+    <Location>
+      <X>10</X>
+      <Y>110</Y>
+    </Location>
+    <Size>
+      <CX>280</CX>
+      <CY>80</CY>
+    </Size>
+    <Style_Border>true</Style_Border>
+  </Listbox>
+
+</Screen>
+
+</XML>
