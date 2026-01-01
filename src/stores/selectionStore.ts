@@ -40,44 +40,56 @@ export const useSelectionStore = defineStore('selection', () => {
   })
 
   // Actions
+  // Note: Vue's reactivity doesn't reliably track Set mutations (.add, .delete, .clear)
+  // so we must create a new Set and reassign the ref to trigger reactivity
+
   function select(id: string, multi = false): void {
+    const newSet = new Set(selectedIds.value)
     if (multi) {
       // Toggle selection for multi-select
-      if (selectedIds.value.has(id)) {
-        selectedIds.value.delete(id)
+      if (newSet.has(id)) {
+        newSet.delete(id)
       } else {
-        selectedIds.value.add(id)
+        newSet.add(id)
       }
     } else {
       // Single select - clear and add
-      selectedIds.value.clear()
-      selectedIds.value.add(id)
+      newSet.clear()
+      newSet.add(id)
     }
+    selectedIds.value = newSet
   }
 
   function selectMultiple(ids: string[]): void {
-    selectedIds.value.clear()
+    const newSet = new Set<string>()
     for (const id of ids) {
-      selectedIds.value.add(id)
+      newSet.add(id)
     }
+    selectedIds.value = newSet
   }
 
   function addToSelection(id: string): void {
-    selectedIds.value.add(id)
+    const newSet = new Set(selectedIds.value)
+    newSet.add(id)
+    selectedIds.value = newSet
   }
 
   function removeFromSelection(id: string): void {
-    selectedIds.value.delete(id)
+    const newSet = new Set(selectedIds.value)
+    newSet.delete(id)
+    selectedIds.value = newSet
   }
 
   function selectAll(): void {
+    const newSet = new Set<string>()
     for (const element of elementsStore.elementList) {
-      selectedIds.value.add(element.id)
+      newSet.add(element.id)
     }
+    selectedIds.value = newSet
   }
 
   function clearSelection(): void {
-    selectedIds.value.clear()
+    selectedIds.value = new Set()
     focusedPropertyPath.value = null
   }
 

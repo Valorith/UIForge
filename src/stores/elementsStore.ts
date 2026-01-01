@@ -49,6 +49,8 @@ export const useElementsStore = defineStore('elements', () => {
     const element = elements.value.get(id)
     if (element) {
       Object.assign(element, changes)
+      // Reassign Map to trigger Vue reactivity
+      elements.value = new Map(elements.value)
     }
   }
 
@@ -102,6 +104,9 @@ export const useElementsStore = defineStore('elements', () => {
         newParent.children.push(element)
       }
     }
+
+    // Reassign Map to trigger Vue reactivity
+    elements.value = new Map(elements.value)
   }
 
   function duplicateElement(id: string): ScreenPiece | null {

@@ -398,12 +398,23 @@ async function handleDrop(event: DragEvent) {
 // Recursive element rendering helper
 function getAllElements(elements: ScreenPiece[]): ScreenPiece[] {
   const result: ScreenPiece[] = []
-  for (const el of elements) {
-    result.push(el)
-    if (el.children.length > 0) {
-      result.push(...getAllElements(el.children))
+  const seen = new Set<string>()
+
+  const traverse = (els: ScreenPiece[]): void => {
+    for (const el of els) {
+      // Skip if we've already seen this element (prevents duplicate keys)
+      if (seen.has(el.id)) {
+        continue
+      }
+      seen.add(el.id)
+      result.push(el)
+      if (el.children.length > 0) {
+        traverse(el.children)
+      }
     }
   }
+
+  traverse(elements)
   return result
 }
 
@@ -599,27 +610,27 @@ function getElementY(element: ScreenPiece): number {
 
             <!-- Inner border highlight for buttons -->
             <v-rect
-              v-if="element.type === 'Button'"
+              v-if="element.type === 'Button' && element.size.cx > 4 && element.size.cy > 4"
               :config="{
                 x: 1,
                 y: 1,
-                width: element.size.cx - 2,
-                height: element.size.cy - 2,
+                width: Math.max(0, element.size.cx - 2),
+                height: Math.max(0, element.size.cy - 2),
                 fill: 'transparent',
                 stroke: 'rgba(255,255,255,0.1)',
                 strokeWidth: 1,
-                cornerRadius: getCornerRadius(element) - 1,
+                cornerRadius: Math.max(0, getCornerRadius(element) - 1),
                 listening: false,
               }"
             />
 
             <!-- Screen titlebar -->
             <v-rect
-              v-if="element.type === 'Screen'"
+              v-if="element.type === 'Screen' && element.size.cx > 4"
               :config="{
                 x: 1,
                 y: 1,
-                width: element.size.cx - 2,
+                width: Math.max(0, element.size.cx - 2),
                 height: 22,
                 fill: 'rgba(100,100,140,0.3)',
                 cornerRadius: [3, 3, 0, 0],
@@ -629,12 +640,12 @@ function getElementY(element: ScreenPiece): number {
 
             <!-- Gauge background track -->
             <v-rect
-              v-if="element.type === 'Gauge'"
+              v-if="element.type === 'Gauge' && element.size.cx > 4 && element.size.cy > 4"
               :config="{
                 x: 2,
                 y: 2,
-                width: element.size.cx - 4,
-                height: element.size.cy - 4,
+                width: Math.max(1, element.size.cx - 4),
+                height: Math.max(1, element.size.cy - 4),
                 fill: 'rgba(0,0,0,0.4)',
                 cornerRadius: 1,
                 listening: false,
@@ -643,12 +654,12 @@ function getElementY(element: ScreenPiece): number {
 
             <!-- Gauge fill -->
             <v-rect
-              v-if="element.type === 'Gauge'"
+              v-if="element.type === 'Gauge' && element.size.cx > 4 && element.size.cy > 4"
               :config="{
                 x: 2,
                 y: 2,
-                width: (element.size.cx - 4) * getGaugeFillPercent(element),
-                height: element.size.cy - 4,
+                width: Math.max(1, element.size.cx - 4) * getGaugeFillPercent(element),
+                height: Math.max(1, element.size.cy - 4),
                 fill: getGaugeFillColor(element),
                 cornerRadius: 1,
                 listening: false,
@@ -657,14 +668,14 @@ function getElementY(element: ScreenPiece): number {
 
             <!-- Gauge percentage text -->
             <v-text
-              v-if="element.type === 'Gauge'"
+              v-if="element.type === 'Gauge' && element.size.cy > 4"
               :config="{
                 x: 0,
                 y: 0,
                 width: element.size.cx,
                 height: element.size.cy,
                 text: Math.round(getGaugeFillPercent(element) * 100) + '%',
-                fontSize: Math.min(element.size.cy - 4, 14),
+                fontSize: Math.max(8, Math.min(element.size.cy - 4, 14)),
                 fill: '#ffffff',
                 align: 'center',
                 verticalAlign: 'middle',
@@ -689,12 +700,12 @@ function getElementY(element: ScreenPiece): number {
             />
 
             <!-- Listbox rows simulation -->
-            <template v-if="element.type === 'Listbox'">
+            <template v-if="element.type === 'Listbox' && element.size.cy > 38">
               <v-line
-                v-for="i in Math.min(Math.floor((element.size.cy - 20) / 18), 5)"
+                v-for="i in Math.max(0, Math.min(Math.floor((element.size.cy - 20) / 18), 5))"
                 :key="`listrow-${i}`"
                 :config="{
-                  points: [4, 18 + i * 18, element.size.cx - 4, 18 + i * 18],
+                  points: [4, 18 + i * 18, Math.max(5, element.size.cx - 4), 18 + i * 18],
                   stroke: 'rgba(255,255,255,0.1)',
                   strokeWidth: 1,
                   listening: false,
@@ -811,13 +822,13 @@ function getElementY(element: ScreenPiece): number {
             />
 
             <!-- InvSlot visual (inventory grid square) -->
-            <template v-if="element.type === 'InvSlot'">
+            <template v-if="element.type === 'InvSlot' && element.size.cx > 4 && element.size.cy > 4">
               <v-rect
                 :config="{
                   x: 2,
                   y: 2,
-                  width: element.size.cx - 4,
-                  height: element.size.cy - 4,
+                  width: Math.max(1, element.size.cx - 4),
+                  height: Math.max(1, element.size.cy - 4),
                   fill: 'rgba(0,0,0,0.3)',
                   stroke: '#4a4a3a',
                   strokeWidth: 1,
@@ -842,17 +853,17 @@ function getElementY(element: ScreenPiece): number {
             </template>
 
             <!-- SpellGem visual (gem shape) -->
-            <template v-if="element.type === 'SpellGem'">
+            <template v-if="element.type === 'SpellGem' && element.size.cx > 4 && element.size.cy > 4">
               <v-rect
                 :config="{
                   x: 2,
                   y: 2,
-                  width: element.size.cx - 4,
-                  height: element.size.cy - 4,
+                  width: Math.max(1, element.size.cx - 4),
+                  height: Math.max(1, element.size.cy - 4),
                   fill: 'linear-gradient(135deg, #3a5a8a, #1a2a4a)',
                   stroke: '#5a7aaa',
                   strokeWidth: 1,
-                  cornerRadius: 4,
+                  cornerRadius: Math.min(4, Math.max(0, Math.min(element.size.cx, element.size.cy) / 2 - 2)),
                   listening: false,
                 }"
               />
@@ -872,17 +883,17 @@ function getElementY(element: ScreenPiece): number {
             </template>
 
             <!-- HotButton visual -->
-            <template v-if="element.type === 'HotButton'">
+            <template v-if="element.type === 'HotButton' && element.size.cx > 4 && element.size.cy > 4">
               <v-rect
                 :config="{
                   x: 2,
                   y: 2,
-                  width: element.size.cx - 4,
-                  height: element.size.cy - 4,
+                  width: Math.max(1, element.size.cx - 4),
+                  height: Math.max(1, element.size.cy - 4),
                   fill: 'rgba(60,30,60,0.5)',
                   stroke: '#6a4a6a',
                   strokeWidth: 1,
-                  cornerRadius: 3,
+                  cornerRadius: Math.min(3, Math.max(0, Math.min(element.size.cx, element.size.cy) / 2 - 2)),
                   listening: false,
                 }"
               />
@@ -904,12 +915,12 @@ function getElementY(element: ScreenPiece): number {
             </template>
 
             <!-- Slider visual -->
-            <template v-if="element.type === 'Slider'">
+            <template v-if="element.type === 'Slider' && element.size.cx > 8 && element.size.cy > 12">
               <v-rect
                 :config="{
                   x: 4,
                   y: element.size.cy / 2 - 2,
-                  width: element.size.cx - 8,
+                  width: Math.max(1, element.size.cx - 8),
                   height: 4,
                   fill: 'rgba(0,0,0,0.4)',
                   cornerRadius: 2,
@@ -981,9 +992,9 @@ function getElementY(element: ScreenPiece): number {
             </template>
 
             <!-- TileLayoutBox visual (grid pattern) -->
-            <template v-if="element.type === 'TileLayoutBox'">
+            <template v-if="element.type === 'TileLayoutBox' && element.size.cx > 30 && element.size.cy > 30">
               <v-line
-                v-for="i in Math.min(4, Math.floor(element.size.cx / 30))"
+                v-for="i in Math.max(0, Math.min(4, Math.floor(element.size.cx / 30)))"
                 :key="`tile-v-${i}`"
                 :config="{
                   points: [i * 30, 0, i * 30, element.size.cy],
@@ -994,7 +1005,7 @@ function getElementY(element: ScreenPiece): number {
                 }"
               />
               <v-line
-                v-for="i in Math.min(4, Math.floor(element.size.cy / 30))"
+                v-for="i in Math.max(0, Math.min(4, Math.floor(element.size.cy / 30)))"
                 :key="`tile-h-${i}`"
                 :config="{
                   points: [0, i * 30, element.size.cx, i * 30],
