@@ -24,15 +24,19 @@ export const useElementsStore = defineStore('elements', () => {
 
   // Actions
   function addElement(element: ScreenPiece): void {
-    elements.value.set(element.id, element)
+    const newMap = new Map(elements.value)
+    newMap.set(element.id, element)
 
     // Also add to parent's children if it has a parent
     if (element.parentId) {
-      const parent = elements.value.get(element.parentId)
+      const parent = newMap.get(element.parentId)
       if (parent && !parent.children.find((c) => c.id === element.id)) {
         parent.children.push(element)
       }
     }
+
+    // Reassign to trigger Vue reactivity
+    elements.value = newMap
   }
 
   function addElements(newElements: ScreenPiece[]): void {
@@ -52,21 +56,30 @@ export const useElementsStore = defineStore('elements', () => {
     const element = elements.value.get(id)
     if (!element) return
 
-    // Remove from parent's children
-    if (element.parentId) {
-      const parent = elements.value.get(element.parentId)
-      if (parent) {
-        parent.children = parent.children.filter((c) => c.id !== id)
+    // Collect all IDs to delete (element and all its descendants)
+    const idsToDelete = new Set<string>()
+    const collectIds = (el: ScreenPiece): void => {
+      idsToDelete.add(el.id)
+      for (const child of el.children) {
+        collectIds(child)
+      }
+    }
+    collectIds(element)
+
+    // Create new Map without deleted elements
+    const newMap = new Map<string, ScreenPiece>()
+    for (const [elId, el] of elements.value) {
+      if (!idsToDelete.has(elId)) {
+        // Also remove deleted children from parent's children array
+        if (el.children.some((c) => idsToDelete.has(c.id))) {
+          el.children = el.children.filter((c) => !idsToDelete.has(c.id))
+        }
+        newMap.set(elId, el)
       }
     }
 
-    // Recursively delete children
-    for (const child of element.children) {
-      deleteElement(child.id)
-    }
-
-    // Remove from map
-    elements.value.delete(id)
+    // Reassign to trigger Vue reactivity
+    elements.value = newMap
   }
 
   function moveElement(id: string, newParentId: string | null): void {
@@ -129,14 +142,18 @@ export const useElementsStore = defineStore('elements', () => {
    * Flatten a hierarchical element tree into the store
    */
   function loadElementTree(rootElement: ScreenPiece): void {
+    // Create a new Map with existing elements to ensure Vue reactivity triggers
+    const newMap = new Map(elements.value)
     const flatten = (element: ScreenPiece): void => {
-      elements.value.set(element.id, element)
+      newMap.set(element.id, element)
       for (const child of element.children) {
         child.parentId = element.id
         flatten(child)
       }
     }
     flatten(rootElement)
+    // Reassign the entire Map to trigger Vue reactivity
+    elements.value = newMap
   }
 
   return {
