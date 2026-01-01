@@ -28,7 +28,7 @@ const guides = ref<GuideLine[]>([])
 const selectedElement = computed(() => selectionStore.singleSelection)
 const otherElements = computed(() => {
   if (!selectedElement.value) return []
-  return elementsStore.topLevelElements.filter(
+  return elementsStore.rootElements.filter(
     el => el.id !== selectedElement.value?.id
   )
 })

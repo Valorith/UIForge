@@ -122,7 +122,7 @@ export const useElementsStore = defineStore('elements', () => {
   }
 
   function clear(): void {
-    elements.value.clear()
+    elements.value = new Map()
   }
 
   /**
